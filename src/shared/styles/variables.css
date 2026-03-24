@@ -1,19 +1,35 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+:root {
+  --color-bg-primary: #0b0b0b;
+  --color-bg-secondary: #171717;
+  --color-border: #252525;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #bdbdbd;
+  --color-text-muted: #8a8a8a;
+  --color-accent: #f47c57;
+  --color-icon-dark: #111111;
+  --color-chat-bg: #ffffff;
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f8f9fa;
-  color: #222;
-}
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-full: 999px;
 
-h1 {
-  margin-bottom: 12px;
-}
+  --shadow-chat: 0 8px 24px rgba(0, 0, 0, 0.25);
 
-div {
-  padding: 20px;
+  --navbar-padding-y: 20px;
+  --navbar-padding-x: 24px;
+
+  --search-width: 380px;
+  --search-height: 48px;
+
+  --icon-btn-size: 40px;
+  --avatar-size: 40px;
+
+  --chat-size: 64px;
+  --chat-right: 28px;
+  --chat-bottom: 28px;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 15px;
 }

@@ -1,8 +1,12 @@
-export default function App() {
+import { Routes, Route } from "react-router-dom";
+import DashboardPage from "./Pages/DashboardPage";
+
+function App() {
   return (
-    <div>
-      <h1>Client Dashboard</h1>
-      <p>This is the client app.</p>
-    </div>
+    <Routes>
+      <Route path="/" element={<DashboardPage />} />
+    </Routes>
   );
 }
+
+export default App;
