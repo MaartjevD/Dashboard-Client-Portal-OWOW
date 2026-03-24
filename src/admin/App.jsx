@@ -1,8 +1,7 @@
-export default function App() {
-  return (
-    <div>
-      <h1>Admin Dashboard</h1>
-      <p>This is the admin app.</p>
-    </div>
-  );
+import LoginPage from "./Pages/LoginPage";
+
+function App() {
+  return <LoginPage />;
 }
+
+export default App;

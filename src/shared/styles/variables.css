@@ -1,19 +1,18 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+:root {
+  --bg-main: #111111;
+  --bg-card: #1b1b1b;
+  --bg-input: #0b0b0b;
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f8f9fa;
-  color: #222;
-}
+  --text-main: #ffffff;
+  --text-secondary: #e2e2e2;
+  --text-muted: #808080;
 
-h1 {
-  margin-bottom: 12px;
-}
+  --border-color: #2a2a2a;
+  --button-text: #111111;
+  --button-bg: #ffffff;
 
-div {
-  padding: 20px;
+  --radius-card: 14px;
+  --radius-input: 10px;
+
+  --font-main: Arial, Helvetica, sans-serif;
 }
