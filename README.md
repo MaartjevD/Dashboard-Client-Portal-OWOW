@@ -1,29 +1,21 @@
-# Dashboard-Client-Portal-OWOW
+![Logo](https://i.ibb.co/JDCbRwV/Fontys-Logo-svg-1.png)
 
-## Project Description
-This project is a dashboard developed for clients of OWOW.  
-The goal of the dashboard is to give clients a clear overview of important project information in one place.
+# Dashboard Client [For OWOW]
 
-## Features
-The dashboard includes:
-- Project overview
-- Budget overview
-- Key documents
-- Project updates
-- Contact options
+# Dashboard Client [For OWOW]
+This project is a dashboard developed for clients of OWOW.
+The goal of the dashboard is to give clients a clear overview of important project information in one place
 
-## Tech Stack
-- React
-- JavaScript
-- HTML / CSS
 
-## Data
-The project currently uses mock data to simulate real project information.
+## Support
 
-## Team
-- Sonya Khosravani
-- Nikvan Mostafavi
-- Makvan Mostafavi
-- Erfan Moazen
-- Pierre Reumkens
-- Maartje Duijnhoven
+For support, email fake@fake.com or join our Slack channel.
+
+
+## Used By
+
+This project is used by the following companies:
+
+- Company 1
+- Company 2
+
