@@ -33,3 +33,25 @@
   --font-size-md: 14px;
   --font-size-lg: 15px;
 }
+
+:root {
+  --page-side-padding: 24px;
+  --project-header-top-padding: 36px;
+  --project-header-bottom-padding: 0;
+
+  --project-breadcrumb-color: #cfcfcf;
+  --project-title-color: #ffffff;
+  --project-subtitle-color: #8f8f8f;
+  --project-border-color: #242424;
+
+  --project-title-size: 58px;
+  --project-subtitle-size: 18px;
+  --project-breadcrumb-size: 14px;
+  --project-tab-size: 14px;
+  --project-status-size: 14px;
+
+  --project-status-bg: #1c4f95;
+  --project-status-color: #7fb6ff;
+
+  --project-tab-active-line: #ffffff;
+}
