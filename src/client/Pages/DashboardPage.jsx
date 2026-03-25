@@ -1,15 +1,20 @@
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
+import TabBar from "../components/TabBar";
 import SlackChatIcon from "../components/SlackChatIcon";
 
 function DashboardPage() {
-return (
+  return (
     <div className="dashboard-page">
-    <Navbar />
-    <Header />
-    <SlackChatIcon />
+      <div className="dashboard-container">
+        <Navbar />
+        <Header />
+        <TabBar />
+      </div>
+
+      <SlackChatIcon />
     </div>
-);
+  );
 }
 
 export default DashboardPage;
