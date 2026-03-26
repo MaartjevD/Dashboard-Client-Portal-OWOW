@@ -17,3 +17,27 @@ h1 {
 div {
   padding: 20px;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  color: #aaa;
+  padding: 15px 40px;
+  font-size: 14px;
+}
+
+.footer-left a {
+  margin-right: 20px;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.footer-left a:hover {
+  color: white;
+}
+
+.footer-right {
+  font-size: 13px;
+}
