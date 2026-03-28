@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "BoldMontreal";
+  src: url("../assets/fonts/pp-neuemontreal-bold.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,7 +29,7 @@ div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
+  background-color: #2a2a2a;
   color: #aaa;
   padding: 15px 40px;
   font-size: 14px;
@@ -40,4 +47,32 @@ div {
 
 .footer-right {
   font-size: 13px;
+  font-family: "BoldMontreal";
+}
+
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  color: #fff;
+  padding: 15px 40px;
+  position: sticky; /* blijft bovenaan bij scrollen */
+  top: 0;
+  z-index: 1000;
+}
+
+.top-navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.top-navbar a:hover {
+  color: #00bfff; /* leuk effect bij hover */
+}
+
+.top-navbar-left h2 {
+  margin: 0;
 }
