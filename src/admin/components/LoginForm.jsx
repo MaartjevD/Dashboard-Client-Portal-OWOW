@@ -1,14 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import LoginInput from "./Logininput";
 
 function LoginForm() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ email, password, rememberMe });
+    navigate("/workspace");
   };
 
   return (
@@ -54,8 +56,6 @@ function LoginForm() {
           Login
         </button>
       </form>
-
-     
 
       <p className="signup-text">
         Don&apos;t have an account?{" "}
