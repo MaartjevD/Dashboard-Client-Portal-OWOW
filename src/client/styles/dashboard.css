@@ -1,0 +1,1446 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #050505;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+/* =========================================================
+   LAYOUT
+   - dashboard-layout
+   - dashboard-main
+   - dashboard-content
+========================================================= */
+.dashboard-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #050505;
+}
+
+.dashboard-main {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 16px 16px 28px;
+}
+
+/* =========================================================
+   SHARED COMPONENT - SIDEBAR
+========================================================= */
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: #0f0f10;
+  border-right: 1px solid #222222;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 34px;
+  z-index: 100;
+}
+
+.sidebar-logo {
+  padding: 0 32px;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: #d9d9d9;
+  opacity: 0.7;
+  margin: 24px 0 18px;
+}
+
+.sidebar-menu {
+  padding: 0 14px !important;
+}
+
+/* =========================================================
+   SHARED COMPONENT - SIDEBAR BUTTON RESET
+========================================================= */
+.sidebar-item,
+.project-subitem {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* =========================================================
+   SHARED COMPONENT - SIDEBAR MAIN ITEM
+========================================================= */
+.sidebar-item {
+  min-height: 54px;
+  border-radius: 12px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: 0.2s ease;
+}
+
+.sidebar-item i {
+  font-size: 16px;
+}
+
+.sidebar-item.active {
+  background: #f0f0f0;
+  color: #111111;
+}
+
+/* =========================================================
+   SHARED COMPONENT - SIDEBAR SUBMENU
+========================================================= */
+.project-submenu {
+  margin: -2px 0 14px 0;
+  padding-left: 18px;
+}
+
+.project-subitem {
+  min-height: 40px;
+  border-radius: 10px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #d8d8d8;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.project-subitem i {
+  font-size: 14px;
+}
+
+.active-subitem {
+  background: #e9e9e9;
+  color: #111111;
+}
+
+/* =========================================================
+   SHARED COMPONENT - TOP NAVBAR
+========================================================= */
+.top-navbar {
+  height: 90px;
+  border-bottom: 1px solid #1f1f1f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  background: #111111;
+}
+
+.search-box {
+  width: 460px;
+  height: 50px;
+  background: #1c1c1c;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 10px;
+}
+
+.search-box i {
+  color: #8d8d8d;
+  font-size: 16px;
+}
+
+.search-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.search-box input::placeholder {
+  color: #8d8d8d;
+}
+
+.top-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-btn {
+  width: 42px;
+  height: 38px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #9f9f9f;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background: #ef7d57;
+  color: #ffffff;
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.notif-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff5b5b;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-weight: 500;
+}
+
+/* =========================================================
+   SHARED COMPONENT - PAGE HEADER
+========================================================= */
+.page-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.page-breadcrumb {
+  color: #8a8a8a;
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.page-title {
+  font-size: 58px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.05;
+}
+
+.page-subtitle {
+  color: #8d8d8d;
+  font-size: 18px;
+  margin: 8px 0 0;
+}
+
+.page-status-badge {
+  background: rgba(35, 84, 147, 0.45);
+  color: #6ea8ff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  align-self: center;
+}
+
+/* =========================================================
+   SHARED COMPONENT - TABBAR
+========================================================= */
+.tabbar-wrapper {
+  border-top: 1px solid #1d1d1d;
+  border-bottom: 1px solid #1d1d1d;
+  margin-bottom: 18px;
+}
+
+.tabbar {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  min-height: 68px;
+}
+
+.tabbar-item {
+  background: transparent;
+  border: none;
+  color: #d0d0d0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 68px;
+  font-size: 14px;
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+}
+
+.tabbar-item.active {
+  color: #ffffff;
+}
+
+.tabbar-item.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   SHARED COMPONENT - COMMON CARD
+========================================================= */
+.custom-card {
+  background: linear-gradient(180deg, #1a1a1a 0%, #171717 100%);
+  border: 1px solid #272727;
+  border-radius: 20px;
+  padding: 24px;
+}
+
+/* =========================================================
+   SHARED COMPONENT - SECTION TITLE
+========================================================= */
+.section-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 20px;
+}
+
+/* =========================================================
+   SHARED COMPONENT - PROGRESS BAR
+========================================================= */
+.progress-label {
+  color: #8d8d8d;
+  font-size: 14px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: #2f2f2f;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   SHARED COMPONENT - CHAT BUTTON
+========================================================= */
+.chat-button {
+  position: fixed;
+  right: 36px;
+  bottom: 118px;
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  background: #e8e8e8;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.chat-button i {
+  line-height: 1;
+}
+
+/* =========================================================
+   SHARED COMPONENT - FOOTER
+========================================================= */
+.footer-area {
+  height: 86px;
+  border-top: 1px solid #1f1f1f;
+  background: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  color: #8d8d8d;
+  font-size: 14px;
+}
+
+.footer-left {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+/* =========================================================
+   PAGE 1 - DASHBOARD
+========================================================= */
+
+/* PAGE 1 - StatsSection */
+.stat-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  min-height: 140px;
+}
+
+.stat-card h6 {
+  margin: 4px 0 16px;
+  color: #9a9a9a;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.stat-card h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.stat-yellow {
+  background: #82661a;
+  color: #ffdb64;
+}
+
+.stat-blue {
+  background: #294d7c;
+  color: #7cb0ff;
+}
+
+.stat-orange {
+  background: #7d3927;
+  color: #ff8d66;
+}
+
+.stat-green {
+  background: #1f6a38;
+  color: #6ff09a;
+}
+
+/* PAGE 1 - ProjectList */
+.project-card {
+  min-height: 210px;
+}
+
+.project-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 14px;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.status-badge {
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.badge-progress {
+  background: rgba(35, 84, 147, 0.45);
+  color: #6ea8ff;
+}
+
+.badge-planning {
+  background: rgba(127, 100, 23, 0.45);
+  color: #e8c14b;
+}
+
+.project-dates {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.date-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c9c9c9;
+  font-size: 14px;
+}
+
+.date-item i {
+  color: #49c16d;
+}
+
+/* PAGE 1 - BudgetList */
+.budget-card {
+  min-height: 210px;
+}
+
+.budget-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.budget-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: conic-gradient(#ffffff 226deg, #3b3b3b 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.budget-circle-inner {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #1a1a1a;
+}
+
+.budget-info {
+  flex: 1;
+}
+
+.budget-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  gap: 16px;
+}
+
+.budget-label {
+  margin: 0;
+  font-size: 14px;
+  color: #d5d5d5;
+}
+
+.budget-row small {
+  color: #767676;
+  display: block;
+  margin-top: 2px;
+}
+
+.budget-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #8f8f8f;
+  margin-top: 10px;
+  gap: 16px;
+}
+
+.budget-total strong {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* PAGE 1 - UpdateList */
+.update-card {
+  min-height: 180px;
+}
+
+.update-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 22px;
+  gap: 12px;
+}
+
+.update-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.update-project-tag {
+  background: #ffffff;
+  color: #111111;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.update-description {
+  color: #c2c2c2;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+
+.update-time {
+  color: #777777;
+  font-size: 14px;
+}
+
+/* =========================================================
+   PAGE 2 - PROJECT OVERVIEW
+========================================================= */
+
+/* PAGE 2 - TimelineSection */
+.timeline-card {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timeline-label {
+  color: #8b8b8b;
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+.timeline-value {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* PAGE 2 - InfoCard */
+.info-card {
+  min-height: 340px;
+}
+
+.info-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 24px;
+}
+
+.status-progress-item {
+  margin-bottom: 22px;
+}
+
+.status-progress-item:last-child {
+  margin-bottom: 0;
+}
+
+.status-progress-name,
+.status-progress-value {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+/* PAGE 2 - DeadlineList */
+.deadline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.deadline-item {
+  background: #181818;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.deadline-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.deadline-title {
+  font-size: 16px;
+  margin: 0 0 4px;
+  color: #ffffff;
+}
+
+.deadline-date {
+  margin: 0;
+  color: #8f8f8f;
+  font-size: 14px;
+}
+
+/* PAGE 2 - ContactCard */
+.contact-card {
+  background: #d9d9d4;
+  border-radius: 10px;
+  padding: 24px 28px 30px;
+  color: #222222;
+  min-height: 360px;
+}
+
+.contact-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 44px;
+}
+
+.contact-person-name {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.contact-person-role {
+  font-size: 18px;
+  color: #686868;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.contact-description {
+  font-size: 16px;
+  color: #767676;
+  margin: 0 0 28px;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+}
+
+.contact-item i {
+  font-size: 24px;
+}
+
+/* =========================================================
+   PAGE 3 - BUDGET
+========================================================= */
+
+/* PAGE 3 - BudgetStatsRow */
+.budget-stat-card {
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 20px;
+}
+
+.budget-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #242424;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.budget-stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.budget-stat-label {
+  margin: 0 0 6px;
+  color: #8d8d8d;
+  font-size: 13px;
+}
+
+.budget-stat-value {
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* PAGE 3 - Shared Title */
+.budget-section-title {
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* PAGE 3 - BudgetProgressCard */
+.budget-progress-card {
+  padding: 20px 18px 18px;
+}
+
+.budget-card-title-row {
+  margin-bottom: 22px;
+}
+
+.budget-card-title-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.budget-card-title-left i {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.budget-card-title-left h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.budget-progress-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.budget-progress-label {
+  color: #8f8f8f;
+  font-size: 13px;
+}
+
+.budget-progress-percent {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.budget-progress-track {
+  width: 100%;
+  height: 14px;
+  background: #1f1f1f;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.budget-progress-fill {
+  width: 75%;
+  height: 100%;
+  background: #4d8df7;
+  border-radius: 999px;
+}
+
+.budget-progress-note {
+  background: linear-gradient(90deg, #1b1b1b 0%, #1f1f1f 100%);
+  border: 1px solid #232323;
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #a9a9a9;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.budget-progress-note strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* PAGE 3 - MonthlyExpensesCard */
+.monthly-expenses-card {
+  padding: 20px 18px 18px;
+}
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.expense-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expense-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.expense-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.expense-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.expense-values {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.expense-values strong {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.expense-values small {
+  color: #7d7d7d;
+  font-size: 11px;
+}
+
+.expense-track {
+  width: 100%;
+  height: 8px;
+  background: #1d1d1d;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.expense-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.expense-fill-yellow {
+  background: #d6ad32;
+}
+
+.expense-fill-orange {
+  background: #ef6f4d;
+}
+
+.expense-fill-green {
+  background: #4c9c59;
+}
+
+/* PAGE 3 - BudgetHistoryCard */
+.budget-history-card {
+  padding: 20px 18px 18px;
+  min-height: 420px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item {
+  background: linear-gradient(90deg, #1b1b1b 0%, #202020 100%);
+  border-radius: 12px;
+  padding: 14px 12px;
+}
+
+.history-row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.history-month {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.history-value {
+  color: #7f7f7f;
+  font-size: 12px;
+}
+
+.history-track {
+  width: 100%;
+  height: 7px;
+  background: transparent;
+  border-radius: 999px;
+}
+
+.history-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   PAGE 4 - DOCUMENTS
+========================================================= */
+
+/* PAGE 4 - RequirementsDocumentsCard */
+.requirements-card {
+  padding: 12px;
+}
+
+.requirements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.requirement-row {
+  min-height: 62px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #1b1b1b 0%, #202020 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+}
+
+.requirement-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.requirement-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #262626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.requirement-info {
+  min-width: 0;
+}
+
+.requirement-title {
+  margin: 0 0 6px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.requirement-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: #7f7f7f;
+  font-size: 12px;
+}
+
+.requirement-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.requirement-dot {
+  color: #5c5c5c;
+}
+
+.requirement-open-btn {
+  min-width: 86px;
+  height: 38px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111111;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+/* PAGE 4 - LinksCard */
+.documents-links-title {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.links-card {
+  padding: 18px;
+  min-height: 210px;
+}
+
+.project-link-box {
+  min-height: 80px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #1b1b1b 0%, #202020 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.project-link-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.project-link-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: #676767;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.project-link-info h4 {
+  margin: 0 0 4px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.project-link-info p {
+  margin: 0;
+  color: #8a8a8a;
+  font-size: 12px;
+}
+
+.project-link-arrow {
+  color: #ffffff;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   PAGE 5 - UPDATE
+========================================================= */
+
+/* PAGE 5 - MilestonesCard */
+.milestones-card {
+  padding: 14px 14px 18px;
+}
+
+.milestones-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.milestones-header i {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.milestones-header h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.milestone-small-card {
+  min-height: 96px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #222222 0%, #1f1f1f 100%);
+  padding: 12px 14px;
+}
+
+.milestone-date {
+  margin: 0 0 8px;
+  color: #8a8a8a;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.milestone-title {
+  margin: 0 0 6px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.milestone-subtitle {
+  margin: 0;
+  color: #8d8d8d;
+  font-size: 13px;
+}
+
+/* PAGE 5 - RecentUpdatesGrid */
+.recent-update-title {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.recent-update-card {
+  min-height: 170px;
+  padding: 14px 16px 12px;
+}
+
+.recent-update-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.recent-update-card-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.recent-update-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.update-icon-blue {
+  background: #315d97;
+}
+
+.update-icon-orange {
+  background: #8a4c3b;
+}
+
+.recent-update-description {
+  margin: 0 0 14px;
+  color: #dddddd;
+  font-size: 13px;
+  line-height: 1.45;
+  max-width: 92%;
+}
+
+.recent-update-time {
+  color: #8b8b8b;
+  font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 1200px) {
+  .page-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .top-navbar {
+    flex-direction: column;
+    height: auto;
+    gap: 16px;
+    padding: 20px;
+    align-items: flex-start;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .top-navbar-right {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .project-dates,
+  .budget-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-area {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 20px;
+    align-items: flex-start;
+  }
+
+  .footer-left {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-right {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 20px 18px 30px;
+  }
+
+  .page-title {
+    font-size: 38px;
+  }
+
+  .tabbar {
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    padding: 12px 0;
+  }
+
+  .tabbar-item {
+    height: 44px;
+  }
+
+  .project-row,
+  .document-row,
+  .requirement-row,
+  .project-link-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .requirement-open-btn {
+    width: 100%;
+  }
+
+  .document-row-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .chat-button {
+    right: 20px;
+    bottom: 95px;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+}
