@@ -1,6 +1,7 @@
 import React from "react";
 import "../shared/styles/global.css";
 import searchIcon from "./Pictures/searchIcon.png";
+import notificationBell from "./Pictures/bell.png";
 
 export default function TopNavbar() {
   return (
@@ -15,7 +16,25 @@ export default function TopNavbar() {
           />
         </div>
       </div>
-      s<div className="top-navbar-right"></div>
+
+      <div className="navbar-right">
+        <div className="top-navbar-right">
+          <div className="langSwitch">
+            <button className="active">EN</button>
+            <button>NL</button>
+          </div>
+        </div>
+
+        <div className="notification">
+          <img src={notificationBell} className="Bell" />
+        </div>
+
+        <div className="profile">
+          <img src="https://i.pravatar.cc/40" className="Avatar" />
+          <span className="name">Jennifer Lopez</span>
+          <span className="arrow">▾</span>
+        </div>
+      </div>
     </nav>
   );
 }

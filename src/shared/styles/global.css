@@ -20,11 +20,9 @@ body {
 h1 {
   margin-bottom: 12px;
 }
-
-div {
+.container {
   padding: 20px;
 }
-
 .footer {
   display: flex;
   justify-content: space-between;
@@ -75,12 +73,50 @@ div {
   width: 20px;
   height: 20px;
 }
+
 .navbar__search-input {
-  border: none; /* geen standaard rand */
-  background: transparent; /* maakt het veld doorzichtig zodat de containerkleur zichtbaar is */
-  outline: none; /* geen blauwe focusrand */
-  flex: 1; /* neemt alle resterende ruimte in het blok */
-  font-size: 14px; /* tekst grootte */
-  color: #333; /* kleur van de tekst, zwart/grijs zodat je het goed ziet */
-  padding: 4px 0; /* beetje ruimte boven en onder de tekst */
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  padding: 4px 0;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.langSwitch {
+  display: flex;
+  background-color: #252525;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.langSwitch button {
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-size: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.langSwitch .active {
+  background-color: #ff573b;
+  color: white;
+}
+
+.Bell {
+  width: 20px;
+  height: 20px;
+}
+.Avatar {
+  border-radius: 50%;
+  object-fit: cover;
 }
