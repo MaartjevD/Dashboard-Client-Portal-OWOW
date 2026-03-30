@@ -179,7 +179,7 @@ h1 {
 .Block p {
   margin-left: 70px;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 12px;
   margin-top: 10px;
   color: #99a1af;
 }
@@ -190,4 +190,44 @@ h1 {
   margin-top: 5px;
   text-align: left;
   color: #fff;
+}
+
+.UpdateBlocksContainer {
+  display: flex;
+  gap: 20px;
+}
+.UpdateBlock {
+  width: 500px;
+  height: 150px;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.UpdateBlock h1 {
+  font-size: 20px;
+}
+
+.UpdateBlock p1 {
+  color: #666666;
+  font-size: 12px;
+}
+
+.ProjectUpdate {
+  background-color: white;
+  padding: 6px 14px;
+  border-radius: 999px;
+  width: 150px;
+}
+
+.ProjectUpdate p {
+  margin: 0;
+  font-size: 18px;
+  color: #252525;
 }
