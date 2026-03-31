@@ -1,8 +1,47 @@
-export default function App() {
+import Header from "./components/Header";
+import ProjectSidebar from "./components/ProjectSidebar";
+
+function App() {
   return (
     <div>
-      <h1>Admin Dashboard</h1>
-      <p>This is the admin app.</p>
+      <ProjectSidebar
+        active="back"
+        onBackClick={() => console.log("Back to Client Page")}
+        onSettingsClick={() => console.log("Settings")}
+      />
+
+      <Header />
     </div>
   );
 }
+
+export default App;
+
+// import Header from "./components/Header";
+// import ClientSelectSidebar from "./components/ClientSelectSidebar";
+
+// function App() {
+//   return (
+//     <div>
+//       <ClientSelectSidebar
+//         active="workspace"
+//         onWorkspaceClick={() => console.log("Workspace")}
+//         onSettingsClick={() => console.log("Settings")}
+//       />
+
+//       <Header />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+//import Header from "./components/Header";
+
+//function App() {
+//return (
+//<div>
+//<Header />
+// </div>
+// );
+//}
