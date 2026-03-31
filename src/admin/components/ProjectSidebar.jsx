@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.svg";
-import arrow from "../../assets/arrow.png";
+import arrow from "../../assets/arrow.svg";
 import { Settings } from "lucide-react";
 
 function ProjectSidebar({ onBackClick, onSettingsClick, active = "back" }) {
@@ -17,7 +17,7 @@ function ProjectSidebar({ onBackClick, onSettingsClick, active = "back" }) {
       <nav className="client-select-sidebar__nav">
         <button
           type="button"
-          className={`client-select-sidebar__button ${
+          className={`client-select-sidebar__button back-btn ${
             active === "back" ? "is-active" : ""
           }`}
           onClick={onBackClick}
@@ -32,7 +32,7 @@ function ProjectSidebar({ onBackClick, onSettingsClick, active = "back" }) {
 
         <button
           type="button"
-          className={`client-select-sidebar__button ${
+          className={`client-select-sidebar__button settings-btn ${
             active === "settings" ? "is-active" : ""
           }`}
           onClick={onSettingsClick}

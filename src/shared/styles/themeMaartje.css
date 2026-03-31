@@ -219,12 +219,15 @@
 .client-select-sidebar__nav {
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 
+/* algemene button */
 .client-select-sidebar__button {
-  width: 100%;
-  min-height: 78px;
-  padding: 0 26px;
+  width: 220px;
+  min-height: 50px;
+  padding: 0 16px;
+  margin-top: 25px;
   border: none;
   border-bottom: 1px solid #111111;
   background: transparent;
@@ -241,24 +244,75 @@
     color 0.2s ease;
 }
 
+/* standaard hover */
 .client-select-sidebar__button:hover {
-  background: #101010;
+  background: #262626;
   color: var(--color-white);
 }
 
+.back-btn {
+  width: 240px;
+  padding-left: 28px;
+}
+
+/* 🔹 BACK BUTTON (geen background hover) */
+.back-btn:hover {
+  background: transparent;
+  color: var(--color-white);
+}
+
+/* arrow wit maken */
+.back-btn:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* 🔹 SETTINGS BUTTON (rounded box) */
+.settings-btn {
+  margin: 16px;
+  border-radius: 13px;
+  border: none;
+  background: var(--color-black);
+}
+
+/* settings tekst + icon wit */
+.settings-btn span {
+  color: #9b9b9b;
+}
+
+.settings-btn svg {
+  color: var(--color-white);
+}
+
+/* hover voor settings */
+.settings-btn:hover {
+  background: #2a2a2a;
+  color: var(--color-white);
+}
+
+.settings-btn:hover span,
+.settings-btn:hover svg {
+  color: var(--color-white);
+}
+
+.settings-btn svg {
+  transition: color 0.2s ease;
+}
+
+/* actieve state
 .client-select-sidebar__button.is-active {
   color: var(--color-off-white);
-}
+} */
 
 .client-select-sidebar__button span {
   line-height: 1;
 }
 
 .client-select-sidebar__arrow {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
   flex-shrink: 0;
+  filter: brightness(0) invert(1);
 }
 
 .client-select-sidebar__button svg {
@@ -266,7 +320,7 @@
   color: #9b9b9b;
 }
 
-.client-select-sidebar__button:hover svg,
+/* .client-select-sidebar__button:hover svg,
 .client-select-sidebar__button.is-active svg {
   color: var(--color-off-white);
-}
+} */
