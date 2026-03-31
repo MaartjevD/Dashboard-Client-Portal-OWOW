@@ -6,12 +6,8 @@ import { Settings } from "lucide-react";
 function ProjectSidebar({ onBackClick, onSettingsClick, active = "back" }) {
   return (
     <aside className="client-select-sidebar">
-      <div className="client-select-sidebar__top">
-        <img
-          src={logo}
-          alt="OWOW logo"
-          className="client-select-sidebar__logo"
-        />
+      <div className="sidebar-top">
+        <img src={logo} alt="OWOW logo" className="sidebar-logo" />
       </div>
 
       <nav className="client-select-sidebar__nav">

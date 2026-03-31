@@ -1,5 +1,5 @@
 import React from "react";
-import "./ClientSelectSidebar.jsx";
+import "./sidebar1.jsx";
 import logo from "../../assets/logo.svg";
 import { BriefcaseBusiness, Settings } from "lucide-react";
 

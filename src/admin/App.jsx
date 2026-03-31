@@ -1,11 +1,11 @@
 import Header from "./components/Header";
-import ProjectSidebar from "./components/ProjectSidebar";
+import Sidebar3 from "./components/sidebar3";
 
 function App() {
   return (
     <div>
-      <ProjectSidebar
-        active="back"
+      <Sidebar3
+        active="settings"
         onBackClick={() => console.log("Back to Client Page")}
         onSettingsClick={() => console.log("Settings")}
       />
@@ -16,6 +16,25 @@ function App() {
 }
 
 export default App;
+
+// import Header from "./components/Header";
+// import ProjectSidebar from "./components/sidebar2";
+
+// function App() {
+//   return (
+//     <div>
+//       <ProjectSidebar
+//         active="back"
+//         onBackClick={() => console.log("Back to Client Page")}
+//         onSettingsClick={() => console.log("Settings")}
+//       />
+
+//       <Header />
+//     </div>
+//   );
+// }
+
+// export default App;
 
 // import Header from "./components/Header";
 // import ClientSelectSidebar from "./components/ClientSelectSidebar";
