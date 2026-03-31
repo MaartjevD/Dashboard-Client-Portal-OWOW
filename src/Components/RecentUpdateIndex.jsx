@@ -8,21 +8,34 @@ export default function UpdateIndex() {
 
       <div className="UpdateBlocksContainer">
         <div className="UpdateBlock">
-          <h1>Milestone complete</h1>
-          <p> Nieuwe projecten toegevoegd.</p>
-          <p1>2 hours ago</p1>
-          <div className="ProjectUpdate">
-            <p> project Alpha </p>
+          <div className="TopRow">
+            <h1>Milestone complete</h1>
+            <div className="ProjectUpdate">
+              <p> project Alpha </p>
+            </div>
           </div>
+
+          <p className="Description">
+            {" "}
+            A new project has been added. Check it out for more details and get
+            started right away!!
+          </p>
+          <p className="PostTime">2 hours ago</p>
         </div>
 
         <div className="UpdateBlock">
-          <h1>Milestone complete</h1>
-          <p>Projectplanning is bijgewerkt.</p>
-          <p1>2 hours ago</p1>
-          <div className="ProjectUpdate">
-            <p> project Alpha </p>
+          <div className="TopRow">
+            <h1>Milestone complete</h1>
+            <div className="ProjectUpdate">
+              <p> project Alpha </p>
+            </div>
           </div>
+
+          <p className="Description">
+            The project planning has been updated. Review the latest changes to
+            stay up to date!
+          </p>
+          <p className="PostTime">2 hours ago</p>
         </div>
       </div>
     </div>

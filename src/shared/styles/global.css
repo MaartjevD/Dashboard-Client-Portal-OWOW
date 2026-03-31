@@ -178,8 +178,8 @@ h1 {
 
 .Block p {
   margin-left: 70px;
-  font-weight: 500;
-  font-size: 12px;
+  font-weight: bold;
+  font-size: 20px;
   margin-top: 10px;
   color: #99a1af;
 }
@@ -214,20 +214,35 @@ h1 {
   font-size: 20px;
 }
 
-.UpdateBlock p1 {
-  color: #666666;
-  font-size: 12px;
-}
-
 .ProjectUpdate {
   background-color: white;
   padding: 6px 14px;
   border-radius: 999px;
-  width: 150px;
+  width: 140px;
 }
 
 .ProjectUpdate p {
   margin: 0;
-  font-size: 18px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
   color: #252525;
+}
+.Description {
+  font-weight: 100;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.PostTime {
+  margin: 0;
+  color: #666666;
+  font-size: 12px;
+}
+
+.TopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
