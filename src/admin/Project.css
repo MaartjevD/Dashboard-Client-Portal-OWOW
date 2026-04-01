@@ -1,0 +1,177 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+#update-card-collection > * {
+    margin-bottom: 3%;
+}
+
+#update-card-collection {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    text-align: left;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.update-card {
+    padding: 2%;
+    height: 25vh;
+    display: grid;
+    grid-template-areas:'status title edit delete'
+                        'status details edit delete'
+                        'status content content content';
+    grid-template-columns: 5% auto 5% 5%;
+    grid-template-rows: 25% 25% 50%;
+    overflow-x: hidden;
+    background-color: var(--black) !important;
+    border: 1px solid var(--off-black);
+    border-radius: 10px;
+    row-gap: 0;;
+}
+
+.update-card * {
+    text-overflow: ellipsis;
+}
+
+.update-card-status {
+    grid-area: status;
+    align-self: center;
+    aspect-ratio: 1;
+    text-align: center;
+    background: url('../assets/update-card-status.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.update-card-title {
+    color: var(--white);
+    grid-area: title;
+}
+
+.update-card-details {
+    color: var(--off-white);
+    grid-area: details;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+}
+
+.update-card-details p {
+    color: var(--beige);
+    font-size: 1em;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.update-card-project {
+    background-color: var(--off-black);
+    border: none;
+    color: var(--beige);
+    font-size: 1em;
+    padding: 10px;
+}
+
+.update-card-date {
+    color: var(--beige);
+    font-size: 1em;
+    padding: 10px;
+}
+
+.update-card-content {
+    color: var(--off-white);
+    grid-area: content;
+}
+
+.update-card-edit {
+    grid-area: edit;
+    background: url('../assets/edit.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.update-card-delete {
+    grid-area: delete;
+    background: url('../assets/delete.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.document-card {
+    display: grid;
+    grid-template-areas:'icon name name name'
+                        'icon description description description'
+                        'icon status status status'
+                        'open open edit delete';
+    grid-template-columns: 15% auto 5% 5%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0;
+    padding: 2%;
+    height: 25vh;
+    border: 1px solid var(--off-black);
+    border-radius: 10px;
+}
+
+.document-card * {
+    color: var(--white);
+}
+
+.document-card-type {
+    grid-area: icon;
+    color: var(--white);
+    border-radius: 1vw;
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 1;
+    align-content: center;
+    text-align: center;
+    background-image: url('../assets/link.svg');
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.document-card-type.doctype-word { background-color: var(--blue); }
+.document-card-type.doctype-pdf { background-color: var(--orange); }
+.document-card-type.doctype-spreadsheet{ background-color: var(--green); }
+
+.document-card-name {
+  grid-area: name;
+  color: var(--white);
+}
+
+.document-card-description {
+  grid-area: description;
+  color: var(--off-white);}
+
+.document-card-source-name {
+  grid-area: source;
+  color: var(--off-white);
+}
+
+.document-card-status {
+  grid-area: status !important;
+  color: var(--beige) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.document-line {
+    height: 2px !important;
+    background-color: var(--beige) !important;
+    padding: 0 !important;
+    margin: 20px !important;
+    display: block !important;
+    position: relative !important;
+    top: 30% !important;
+}
+
+.document-card-open {
+  grid-area: open;
+  font-size: 1em;
+}

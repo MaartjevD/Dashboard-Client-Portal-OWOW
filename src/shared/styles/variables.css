@@ -2,6 +2,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  --black: #111111;
+  --off-black: #1B1B1B;
+  --off-white: #e2e2e2;
+  --white: #ffffff;
+  --beige: #d0d2cc;
+  --yellow: #feb800;
+  --orange: #ff573b;
+  --green: #018848;
+  --blue: #0988EF;
+  background-color: var(--black);
 }
 
 body {

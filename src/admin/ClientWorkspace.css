@@ -1,0 +1,195 @@
+body {
+  height: 100vh;
+  background-color: var(--black);
+}
+
+input, select, option {
+  color: var(--white);
+}
+
+p {
+  display: inline-block;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  vertical-align: center;
+  font-size: 1vw;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+#client-card-header {
+  display: grid;
+  grid-template-areas: 'head button'
+                       'desc button';
+  grid-template-columns: 80% 20%;
+  margin: 0 3% 0 2%;
+}
+
+#client-card-header-head {
+  grid-area: head;
+  color: var(--white);
+  text-align: left;
+}
+
+#client-card-header-desc {
+  grid-area: desc;
+  color: var(--off-white);
+  text-align: left;
+}
+
+#client-card-header-button {
+  grid-area: button;
+  margin: 5% 0 5% 0;
+}
+
+#client-card-collection {
+  overflow-y: scroll;
+  height: max-content;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 2%;
+  row-gap: 2%;
+  padding: 2%;
+  text-align: left;
+  height: 100%;
+}
+
+.client-card {
+  padding: 2%;
+  background-color: var(--black);
+  border: 1px solid var(--off-black);
+  border-radius: 10px;
+  display: grid;
+  grid-template-areas:  'img name name name'
+                        'img company company company'
+                        'projects projects projects projects'
+                        'last-update last-update last-update settings';
+  grid-template-columns: 20% auto auto 10%;
+}
+
+.client-card-image {
+  grid-area: img;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 100%;
+  width: 100%;
+  margin: 0;
+  aspect-ratio: 1;
+  align-content: center;
+  text-align: center;
+}
+
+.client-card-name {
+  color: var(--white);
+  grid-area: name;
+}
+
+.client-card-company {
+  color: var(--off-white);
+  grid-area: company;
+}
+
+.client-card-project-count {
+  color: var(--off-white);
+  grid-area: projects;
+  border-bottom: 1px solid var(--off-white)
+}
+
+.client-card-project-update {
+  grid-area: last-update;
+}
+
+.client-card-update-read {
+  color: var(--off-white);
+}
+
+.client-card-update-unread {
+  color: var(--yellow);
+}
+
+.client-card-settings-image {
+  grid-area: settings;
+}
+
+#ClientInputForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--off-white);
+  border: 2px solid var(--off-black);
+  border-radius: 0 0 10px 10px;
+  color: var(--off-white);
+}
+
+#ClientInputForm input, #ClientInputForm select, #ClientInputForm select {
+  background-color: var(--off-black);
+  border: 1px solid var(--beige);
+  border-radius: 10px;
+  padding: 10px;
+  height: 5vh;
+}
+
+#ClientInputForm select {
+    appearance: none; /* Disable the default arrow */
+    -webkit-appearance: none; /* For WebKit-based browsers */
+    -moz-appearance: none; /* For Firefox */
+    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+#input-header {
+  border: 2px solid var(--off-black);
+  color: var(--white);
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0;
+}
+
+.input-section {
+  color: var(--white);
+  border-bottom: 2px solid var(--off-black);
+  padding-bottom: 5px;
+  margin-bottom: 0;
+  margin-top: 2vh;
+}
+
+.input-section:nth-child(2) {
+  margin-top: -2vh;
+}
+
+.input-section::after {
+  margin-top: 0;
+}
+
+#input-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 10px 0 0 0;
+  padding: 5px 0 0 0;
+  border-top: 1px solid var(--beige);
+}
+
+.button {
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+  border-color: var(--beige);
+  padding: 10px 20px;
+}
+
+.button-inversed {
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 10px;
+  border-color: var(--beige);
+  padding: 10px 20px;
+}
