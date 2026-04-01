@@ -3,9 +3,9 @@ import ProjectOverviewPage from './pages/ProjectOverviewPage';
 
 function App() {
   return (
-    <ClientLayout>
-      <ProjectOverviewPage />
-    </ClientLayout>
+  <Route element={<ClientLayout />}>
+    <Route path="/dashboard" element={<DashboardPage />} />
+  </Route>
   );
 }
 
