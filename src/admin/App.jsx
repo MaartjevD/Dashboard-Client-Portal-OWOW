@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import Sidebar3 from "./components/sidebar3";
-import ProjectCards from "./components/projectCards";
+import BudgetCard from "./components/BudgetCard";
 
 function App() {
   return (
@@ -14,13 +14,37 @@ function App() {
       <Header />
 
       <div className="main">
-        <ProjectCards />
+        <BudgetCard />
       </div>
     </div>
   );
 }
 
 export default App;
+
+// import Header from "./components/Header";
+// import Sidebar3 from "./components/sidebar3";
+// import ProjectCards from "./components/projectCards";
+
+// function App() {
+//   return (
+//     <div>
+//       <Sidebar3
+//         active="settings"
+//         onBackClick={() => console.log("Back")}
+//         onSettingsClick={() => console.log("Settings")}
+//       />
+
+//       <Header />
+
+//       <div className="main">
+//         <ProjectCards />
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
 
 // import Header from "./components/Header";
 // import Sidebar3 from "./components/sidebar3";
