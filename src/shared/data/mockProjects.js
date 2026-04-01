@@ -17,7 +17,7 @@ const mockProjects = [
         id: "alpha-doc-1",
         title: "Project Brief",
         type: "PDF",
-        uploadedAt: "2026-03-14",
+        uploadedAt: "2026-03-15",
       },
       {
         id: "alpha-doc-2",
