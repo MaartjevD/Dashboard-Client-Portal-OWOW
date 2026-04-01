@@ -121,3 +121,18 @@
 .client-footer-link:hover {
   color: var(--color-text);
 }
+
+/* Client Layout */
+.client-shell {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.client-main {
+  min-width: 0;
+  background-color: var(--color-bg);
+}
+
+.page-content {
+  min-width: 0;
+}
