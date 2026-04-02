@@ -139,6 +139,7 @@ h1 {
   justify-content: space-between;
   background-color: #2a2a2a;
   color: #fff;
+  border: 1px solid #4d4c4c;
 }
 
 .Block::before {
@@ -208,6 +209,7 @@ h1 {
   justify-content: space-between;
   background-color: #2a2a2a;
   color: #fff;
+  border: 1px solid #4d4c4c;
 }
 
 .UpdateBlock h1 {
@@ -259,6 +261,7 @@ h1 {
   gap: 40px;
   background-color: #2a2a2a;
   color: #fff;
+  border: 1px solid #4d4c4c;
 }
 
 .DeadlineTitle {
@@ -313,4 +316,46 @@ h1 {
   font-size: 14px;
   font-weight: 200;
   color: #99a1af;
+}
+
+.BudgetBlock {
+  width: 1050px;
+  height: 500px;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #2a2a2a;
+  border: 1px solid #4d4c4c;
+}
+
+.HistoryTitel {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff;
+}
+
+.BudgetHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #ccc;
+}
+
+.ProgressBar {
+  background: #333;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  background: #ffffff;
+  height: 100%;
+  border-radius: 10px;
 }
