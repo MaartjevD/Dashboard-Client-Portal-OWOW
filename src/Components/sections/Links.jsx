@@ -8,7 +8,7 @@ export default function Links() {
     <div className="links">
       <h2>Links</h2>
 
-      <div className="LinksBlock">
+      <div className="LinksOuterBlock">
         <div className="LinksContainer">
           <div className="Card">
             <img src={Link} className="LinkIcon" />

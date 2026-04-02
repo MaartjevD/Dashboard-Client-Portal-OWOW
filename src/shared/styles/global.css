@@ -379,45 +379,55 @@ h1 {
   font-size: 24px;
   margin-bottom: 20px;
 }
+
 .LinkIcon {
   width: 50px;
   height: 50px;
-  border-radius: 4px;
+  border-radius: 8px;
 }
-
 .ArrowIcon {
   width: 20px;
   height: 20px;
+  opacity: 0.8;
 }
+
+.LinksOuterBlock {
+  background: #2a2a2a;
+  border: 1px solid #4d4c4c;
+  width: calc(100% - 40px);
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
 .LinksContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
-
 .Card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(145deg, #1a1a1a, #111);
-  padding: 20px;
-  border-radius: 15px;
-  border: 1px solid #2a2a2a;
+  background: #434343;
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 1px solid #3a3a3a;
+  gap: 20px;
 }
-
 .Text {
   flex: 1;
 }
-
 .Text h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
   color: white;
+  font-weight: 600;
 }
 
 .Text p {
-  margin: 5px 0 0;
-  font-size: 14 px;
-  color: #ffffff;
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #9ca3af;
   font-weight: 300;
 }
