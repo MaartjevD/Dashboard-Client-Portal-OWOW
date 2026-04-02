@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "BoldMontreal";
+  src: url("../assets/fonts/pp-neuemontreal-bold.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +20,414 @@ body {
 h1 {
   margin-bottom: 12px;
 }
-
-div {
+.container {
   padding: 20px;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2a2a2a;
+  color: #aaa;
+  padding: 15px 40px;
+  font-size: 14px;
+}
+
+.footer-left a {
+  margin-right: 20px;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.footer-left a:hover {
+  color: white;
+}
+
+.footer-right {
+  font-size: 13px;
+  font-family: "BoldMontreal";
+}
+
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2a2a2a;
+  color: #fff;
+  padding: 10px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbarSearchIcon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #252525;
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: 300px;
+}
+.search-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.navbar__search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  padding: 4px 0;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.langSwitch {
+  display: flex;
+  background-color: #252525;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.langSwitch button {
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-size: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.langSwitch .active {
+  background-color: #ff573b;
+  color: white;
+}
+
+.Bell {
+  width: 20px;
+  height: 20px;
+}
+.Avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.FourBlocks {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.Block {
+  flex: 1 1 calc(25% - 20px);
+  width: 250px;
+  height: 120px;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #4d4c4c;
+}
+
+.Block::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+}
+
+.Projects::before {
+  background-color: #feb800;
+}
+.Progress::before {
+  background-color: #00bfff;
+}
+.Planning::before {
+  background-color: #ff6f61;
+}
+.Completed::before {
+  background-color: #28a745;
+}
+
+.Block img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
+.Block p {
+  margin-left: 70px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #99a1af;
+}
+
+.Block h2 {
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 5px;
+  text-align: left;
+  color: #fff;
+}
+
+.UpdateBox {
+  padding: 20px;
+  font-size: 24px;
+}
+.UpdateBlocksContainer {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.UpdateBlock {
+  flex: 1 1 calc(50% - 10px);
+  height: 150px;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #4d4c4c;
+  box-sizing: border-box;
+}
+
+.UpdateBlock h1 {
+  font-size: 20px;
+}
+
+.ProjectUpdate {
+  background-color: white;
+  padding: 6px 14px;
+  border-radius: 999px;
+  width: auto;
+  max-width: 100%;
+}
+
+.ProjectUpdate p {
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #252525;
+}
+
+.Description {
+  font-weight: 100;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.PostTime {
+  margin: 0;
+  color: #666666;
+  font-size: 12px;
+}
+
+.TopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DeadlineBlock {
+  width: 500px;
+  height: 380px;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #4d4c4c;
+}
+
+.DeadlineTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.DeadlineStrokes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #414141;
+}
+
+.DeadlineSpacing {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.CalenderIcon {
+  width: 30px;
+  height: 30px;
+  top: 25px;
+  left: 25px;
+}
+
+.BlockIcon {
+  width: 50px;
+  height: 50px;
+  background-color: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.DeadlineText {
+  display: flex;
+  flex-direction: column;
+}
+
+.DeadlineText p {
+  margin: 0;
+  color: #fff;
+  font-weight: 500;
+}
+.DueDate p {
+  font-size: 14px;
+  font-weight: 200;
+  color: #99a1af;
+}
+
+.BudgetBlock {
+  width: calc(100% - 40px);
+  padding: 15px;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #2a2a2a;
+  border: 1px solid #4d4c4c;
+  box-sizing: border-box;
+}
+
+.HistoryTitel {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.BudgetItem {
+  background: #434343;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+.BudgetHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #ccc;
+}
+
+.ProgressBar {
+  background: #333;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ProgressLine {
+  background: #ffffff;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.links {
+  padding: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.LinkIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+.ArrowIcon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+}
+
+.LinksOuterBlock {
+  background: #2a2a2a;
+  border: 1px solid #4d4c4c;
+  width: calc(100% - 40px);
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.LinksContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.Card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #434343;
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 1px solid #3a3a3a;
+  gap: 20px;
+}
+.Text {
+  flex: 1;
+}
+.Text h3 {
+  margin: 0;
+  font-size: 17px;
+  color: white;
+  font-weight: 600;
+}
+
+.Text p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #9ca3af;
+  font-weight: 300;
 }
