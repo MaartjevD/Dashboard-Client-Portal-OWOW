@@ -38,30 +38,87 @@
 
 
 
-import { Routes, Route, Navigate } from "react-router-dom";
+// import { Routes, Route, Navigate } from "react-router-dom";
 
+// import DashboardPage from "./pages/DashboardPage";
+// import ProjectOverviewPage from "./pages/ProjectOverviewPage";
+// import ProjectBudgetPage from "./pages/ProjectBudgetPage";
+// import ProjectDocumentsPage from "./pages/ProjectDocumentsPage";
+// import ProjectUpdatePage from "./pages/ProjectUpdatePage";
+
+// function App() {
+//   return (
+//     <Routes>
+//       <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
+//       <Route path="/dashboard" element={<DashboardPage />} />
+
+//       <Route
+//         path="/projects/alpha"
+//         element={<Navigate to="/projects/alpha/overview" replace />}
+//       />
+
+//       <Route path="/projects/alpha/overview" element={<ProjectOverviewPage />} />
+//       <Route path="/projects/alpha/budget" element={<ProjectBudgetPage />} />
+//       <Route path="/projects/alpha/documents" element={<ProjectDocumentsPage />} />
+//       <Route path="/projects/alpha/update" element={<ProjectUpdatePage />} />
+//     </Routes>
+//   );
+// }
+
+// export default App;
+
+
+// import { Routes, Route, Navigate } from "react-router-dom";
+
+// import DashboardPage from "./pages/DashboardPage";
+// import ProjectOverviewPage from "./pages/ProjectOverviewPage";
+// import ProjectBudgetPage from "./pages/ProjectBudgetPage";
+// import ProjectDocumentsPage from "./pages/ProjectDocumentsPage";
+// import ProjectUpdatePage from "./pages/ProjectUpdatePage";
+
+// function App() {
+//   return (
+//     <Routes>
+
+//       <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
+//       <Route path="/dashboard" element={<DashboardPage />} />
+
+//       {/* 🔥 Dynamic Project Routing */}
+//       <Route path="/projects/:projectId" element={<Navigate to="overview" replace />} />
+
+//       <Route path="/projects/:projectId/overview" element={<ProjectOverviewPage />} />
+//       <Route path="/projects/:projectId/budget" element={<ProjectBudgetPage />} />
+//       <Route path="/projects/:projectId/documents" element={<ProjectDocumentsPage />} />
+//       <Route path="/projects/:projectId/update" element={<ProjectUpdatePage />} />
+
+//     </Routes>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+
+
+
+
+
+import { Routes, Route, Navigate } from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage";
-import ProjectOverviewPage from "./pages/ProjectOverviewPage";
-import ProjectBudgetPage from "./pages/ProjectBudgetPage";
-import ProjectDocumentsPage from "./pages/ProjectDocumentsPage";
-import ProjectUpdatePage from "./pages/ProjectUpdatePage";
+import ProjectPage from "./pages/ProjectPage";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
-
       <Route path="/dashboard" element={<DashboardPage />} />
-
-      <Route
-        path="/projects/alpha"
-        element={<Navigate to="/projects/alpha/overview" replace />}
-      />
-
-      <Route path="/projects/alpha/overview" element={<ProjectOverviewPage />} />
-      <Route path="/projects/alpha/budget" element={<ProjectBudgetPage />} />
-      <Route path="/projects/alpha/documents" element={<ProjectDocumentsPage />} />
-      <Route path="/projects/alpha/update" element={<ProjectUpdatePage />} />
+      <Route path="/projects/:projectId" element={<ProjectPage />} />
     </Routes>
   );
 }

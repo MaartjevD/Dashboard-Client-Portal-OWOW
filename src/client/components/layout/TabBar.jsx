@@ -81,30 +81,153 @@
 // export default TabBar;
 
 
-import { useLocation, useNavigate } from "react-router-dom";
 
-const tabs = [
-  { label: "Overview", icon: "bi-bullseye", path: "/projects/alpha/overview" },
-  { label: "Budget", icon: "bi-wallet2", path: "/projects/alpha/budget" },
-  { label: "Documents", icon: "bi-file-earmark-text", path: "/projects/alpha/documents" },
-  { label: "Update", icon: "bi-calendar4-event", path: "/projects/alpha/update" },
-];
+
+
+
+// import { useLocation, useNavigate } from "react-router-dom";
+
+// const tabs = [
+//   { label: "Overview", icon: "bi-bullseye", path: "/projects/alpha/overview" },
+//   { label: "Budget", icon: "bi-wallet2", path: "/projects/alpha/budget" },
+//   { label: "Documents", icon: "bi-file-earmark-text", path: "/projects/alpha/documents" },
+//   { label: "Update", icon: "bi-calendar4-event", path: "/projects/alpha/update" },
+// ];
+
+// function TabBar() {
+//   const navigate = useNavigate();
+//   const location = useLocation();
+
+//   return (
+//     <div className="tabbar-wrapper">
+//       <div className="tabbar">
+//         {tabs.map((tab) => {
+//           const isActive = location.pathname === tab.path;
+
+//           return (
+//             <button
+//               key={tab.label}
+//               type="button"
+//               onClick={() => navigate(tab.path)}
+//               className={`tabbar-item ${isActive ? "active" : ""}`}
+//             >
+//               <i className={`bi ${tab.icon}`}></i>
+//               <span>{tab.label.toUpperCase()}</span>
+//             </button>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default TabBar;
+
+
+
+
+
+
+// import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+
+// function TabBar() {
+//   const navigate = useNavigate();
+//   const { projectId } = useParams();
+//   const [searchParams] = useSearchParams();
+
+//   const currentTab = searchParams.get("tab") || "overview";
+
+//   const tabs = [
+//     { label: "Overview", icon: "bi-bullseye", value: "overview" },
+//     { label: "Budget", icon: "bi-wallet2", value: "budget" },
+//     { label: "Documents", icon: "bi-file-earmark-text", value: "documents" },
+//     { label: "Update", icon: "bi-calendar4-event", value: "update" },
+//   ];
+
+//   const handleTabChange = (tabValue) => {
+//     navigate(`/projects/${projectId}?tab=${tabValue}`);
+//   };
+
+//   return (
+//     <div className="tabbar-wrapper">
+//       <div className="tabbar">
+//         {tabs.map((tab) => {
+//           const isActive = currentTab === tab.value;
+
+//           return (
+//             <button
+//               key={tab.value}
+//               type="button"
+//               onClick={() => handleTabChange(tab.value)}
+//               className={`tabbar-item ${isActive ? "active" : ""}`}
+//             >
+//               <i className={`bi ${tab.icon}`}></i>
+//               <span>{tab.label.toUpperCase()}</span>
+//             </button>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default TabBar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 function TabBar() {
   const navigate = useNavigate();
-  const location = useLocation();
+  const { projectId } = useParams();
+  const [searchParams] = useSearchParams();
+
+  const currentTab = searchParams.get("tab") || "overview";
+
+  const tabs = [
+    { label: "Overview", icon: "bi-bullseye", value: "overview" },
+    { label: "Budget", icon: "bi-wallet2", value: "budget" },
+    { label: "Documents", icon: "bi-file-earmark-text", value: "documents" },
+    { label: "Update", icon: "bi-calendar4-event", value: "update" },
+  ];
+
+  const handleTabChange = (tabValue) => {
+    navigate(`/projects/${projectId}?tab=${tabValue}`);
+  };
 
   return (
     <div className="tabbar-wrapper">
       <div className="tabbar">
         {tabs.map((tab) => {
-          const isActive = location.pathname === tab.path;
+          const isActive = currentTab === tab.value;
 
           return (
             <button
-              key={tab.label}
+              key={tab.value}
               type="button"
-              onClick={() => navigate(tab.path)}
+              onClick={() => handleTabChange(tab.value)}
               className={`tabbar-item ${isActive ? "active" : ""}`}
             >
               <i className={`bi ${tab.icon}`}></i>

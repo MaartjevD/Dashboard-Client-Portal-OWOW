@@ -30,10 +30,34 @@ import UpdateList from "../components/sections/UpdateList";
 
 function DashboardPage() {
   const stats = [
-    { id: 1, title: "Total Projects", value: "12", icon: "bi-folder2-open", color: "stat-yellow" },
-    { id: 2, title: "In Progress", value: "03", icon: "bi-graph-up", color: "stat-blue" },
-    { id: 3, title: "Planning", value: "02", icon: "bi-clock", color: "stat-orange" },
-    { id: 4, title: "Completed", value: "07", icon: "bi-check", color: "stat-green" },
+    {
+      id: 1,
+      title: "Total Projects",
+      value: "12",
+      icon: "bi-folder2-open",
+      color: "stat-yellow",
+    },
+    {
+      id: 2,
+      title: "In Progress",
+      value: "03",
+      icon: "bi-graph-up-arrow",
+      color: "stat-blue",
+    },
+    {
+      id: 3,
+      title: "Planning",
+      value: "02",
+      icon: "bi-clock-history",
+      color: "stat-orange",
+    },
+    {
+      id: 4,
+      title: "Completed",
+      value: "07",
+      icon: "bi-check-circle",
+      color: "stat-green",
+    },
   ];
 
   return (
@@ -50,7 +74,6 @@ function DashboardPage() {
           />
 
           <StatsSection data={stats} />
-
           <ProjectList />
           <BudgetList />
           <UpdateList />
