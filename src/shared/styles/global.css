@@ -129,6 +129,7 @@ h1 {
 }
 
 .Block {
+  flex: 1 1 calc(25% - 20px);
   width: 250px;
   height: 120px;
   padding: 15px;
@@ -193,15 +194,21 @@ h1 {
   color: #fff;
 }
 
+.UpdateBox {
+  padding: 20px;
+  font-size: 24px;
+}
 .UpdateBlocksContainer {
   display: flex;
-  gap: 20px;
+  gap: 20px; /* ruimte tussen de blokken */
+  flex-wrap: wrap; /* zorgt dat blokken onder elkaar vallen op kleinere schermen */
+  margin: 20px;
 }
+
 .UpdateBlock {
-  width: 500px;
+  flex: 1 1 calc(50% - 10px); /* elk blok neemt ongeveer de helft van de container minus de helft van de gap */
   height: 150px;
   padding: 15px;
-  margin: 20px;
   border-radius: 10px;
   position: relative;
   display: flex;
@@ -210,6 +217,7 @@ h1 {
   background-color: #2a2a2a;
   color: #fff;
   border: 1px solid #4d4c4c;
+  box-sizing: border-box; /* zorgt dat padding/border geen extra breedte toevoegt */
 }
 
 .UpdateBlock h1 {
@@ -220,7 +228,8 @@ h1 {
   background-color: white;
   padding: 6px 14px;
   border-radius: 999px;
-  width: 140px;
+  width: auto; /* flex bepaalt nu de breedte */
+  max-width: 100%;
 }
 
 .ProjectUpdate p {
@@ -230,6 +239,7 @@ h1 {
   font-weight: bold;
   color: #252525;
 }
+
 .Description {
   font-weight: 100;
   color: #fff;
@@ -319,26 +329,30 @@ h1 {
 }
 
 .BudgetBlock {
-  width: 1050px;
-  height: 500px;
+  width: calc(100% - 40px);
   padding: 15px;
   margin: 20px;
   border-radius: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 40px;
   background-color: #2a2a2a;
   border: 1px solid #4d4c4c;
+  box-sizing: border-box;
 }
 
 .HistoryTitel {
   font-size: 18px;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 20px;
   color: #ffffff;
 }
-
+.BudgetItem {
+  background: #434343;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
 .BudgetHeader {
   display: flex;
   justify-content: space-between;
@@ -354,8 +368,56 @@ h1 {
   overflow: hidden;
 }
 
-.progress {
+.ProgressLine {
   background: #ffffff;
   height: 100%;
   border-radius: 10px;
+}
+
+.links {
+  padding: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.LinkIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+}
+
+.ArrowIcon {
+  width: 20px;
+  height: 20px;
+}
+.LinksContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.Card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #2a2a2a;
+}
+
+.Text {
+  flex: 1;
+}
+
+.Text h3 {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+}
+
+.Text p {
+  margin: 5px 0 0;
+  font-size: 14 px;
+  color: #ffffff;
+  font-weight: 300;
 }

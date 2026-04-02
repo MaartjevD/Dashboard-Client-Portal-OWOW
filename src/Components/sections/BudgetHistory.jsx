@@ -12,7 +12,7 @@ export default function BudgetHistory() {
           <span>€22,400 / €25,000</span>
         </div>
         <div className="ProgressBar">
-          <div className="progress" style={{ width: "89%" }}></div>
+          <div className="ProgressLine" style={{ width: "89%" }}></div>
         </div>
       </div>
 
@@ -22,7 +22,7 @@ export default function BudgetHistory() {
           <span>€24,100 / €25,000</span>
         </div>
         <div className="ProgressBar">
-          <div className="progress" style={{ width: "96%" }}></div>
+          <div className="ProgressLine" style={{ width: "96%" }}></div>
         </div>
       </div>
 
@@ -32,7 +32,7 @@ export default function BudgetHistory() {
           <span>€23,500 / €25,000</span>
         </div>
         <div className="ProgressBar">
-          <div className="progress" style={{ width: "94%" }}></div>
+          <div className="ProgressLine" style={{ width: "94%" }}></div>
         </div>
       </div>
 
@@ -42,7 +42,7 @@ export default function BudgetHistory() {
           <span>€21,200 / €25,000</span>
         </div>
         <div className="ProgressBar">
-          <div className="progress" style={{ width: "85%" }}></div>
+          <div className="ProgressLine" style={{ width: "85%" }}></div>
         </div>
       </div>
 
@@ -52,7 +52,7 @@ export default function BudgetHistory() {
           <span>€18,750 / €25,000</span>
         </div>
         <div className="ProgressBar">
-          <div className="progress" style={{ width: "75%" }}></div>
+          <div className="ProgressLine" style={{ width: "75%" }}></div>
         </div>
       </div>
     </div>

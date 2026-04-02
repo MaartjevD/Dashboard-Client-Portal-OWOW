@@ -5,6 +5,7 @@ import Blocks from "../Components/sections/4Blocks.jsx";
 import UpdateIndex from "../Components/sections/RecentUpdateIndex.jsx";
 import UpcomingDeadline from "../Components/sections/UpcomingDeadline.jsx";
 import BudgetHistory from "../Components/sections/BudgetHistory.jsx";
+import Links from "../Components/sections/Links.jsx";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <UpdateIndex />
       <UpcomingDeadline />
       <BudgetHistory />
+      <Links />
       <Footer />
     </div>
   );
