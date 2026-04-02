@@ -1,7 +1,7 @@
 import React from "react";
-import "../shared/styles/global.css";
-import searchIcon from "./Pictures/searchIcon.png";
-import notificationBell from "./Pictures/bell.png";
+import "../../shared/styles/global.css";
+import searchIcon from "../Pictures/searchIcon.png";
+import notificationBell from "../Pictures/bell.png";
 
 export default function TopNavbar() {
   return (

@@ -1,9 +1,9 @@
 import React from "react";
-import "../shared/styles/global.css";
-import folders from "./Pictures/folder.png";
-import arrow from "./Pictures/Progress.png";
-import time from "./Pictures/time.png";
-import checked from "./Pictures/checked.png";
+import "../../shared/styles/global.css";
+import folders from "../Pictures/folder.png";
+import arrow from "../Pictures/Progress.png";
+import time from "../Pictures/time.png";
+import checked from "../Pictures/checked.png";
 
 export default function Blocks() {
   return (

@@ -246,3 +246,71 @@ h1 {
   justify-content: space-between;
   align-items: center;
 }
+
+.DeadlineBlock {
+  width: 500px;
+  height: 380px;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.DeadlineTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.DeadlineStrokes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #414141;
+}
+
+.DeadlineSpacing {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.CalenderIcon {
+  width: 30px;
+  height: 30px;
+  top: 25px;
+  left: 25px;
+}
+
+.BlockIcon {
+  width: 50px;
+  height: 50px;
+  background-color: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.DeadlineText {
+  display: flex;
+  flex-direction: column;
+}
+
+.DeadlineText p {
+  margin: 0;
+  color: #fff;
+  font-weight: 500;
+}
+.DueDate p {
+  font-size: 14px;
+  font-weight: 200;
+  color: #99a1af;
+}

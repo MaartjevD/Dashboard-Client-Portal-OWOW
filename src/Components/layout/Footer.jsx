@@ -1,5 +1,5 @@
 import React from "react";
-import "../shared/styles/global.css";
+import "../../shared/styles/global.css";
 
 function Footer() {
   return (
