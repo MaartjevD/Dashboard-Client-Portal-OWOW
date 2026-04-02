@@ -200,13 +200,13 @@ h1 {
 }
 .UpdateBlocksContainer {
   display: flex;
-  gap: 20px; /* ruimte tussen de blokken */
-  flex-wrap: wrap; /* zorgt dat blokken onder elkaar vallen op kleinere schermen */
+  gap: 20px;
+  flex-wrap: wrap;
   margin: 20px;
 }
 
 .UpdateBlock {
-  flex: 1 1 calc(50% - 10px); /* elk blok neemt ongeveer de helft van de container minus de helft van de gap */
+  flex: 1 1 calc(50% - 10px);
   height: 150px;
   padding: 15px;
   border-radius: 10px;
@@ -217,7 +217,7 @@ h1 {
   background-color: #2a2a2a;
   color: #fff;
   border: 1px solid #4d4c4c;
-  box-sizing: border-box; /* zorgt dat padding/border geen extra breedte toevoegt */
+  box-sizing: border-box;
 }
 
 .UpdateBlock h1 {
@@ -228,7 +228,7 @@ h1 {
   background-color: white;
   padding: 6px 14px;
   border-radius: 999px;
-  width: auto; /* flex bepaalt nu de breedte */
+  width: auto;
   max-width: 100%;
 }
 
