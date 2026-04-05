@@ -55,7 +55,11 @@ function DashboardPage() {
         <TopNavbar />
 
         <div className="dashboard-content">
-          <PageHeader breadcrumb="Pages / Dashboard" title="Main Page" />
+          <PageHeader
+            breadcrumb="Pages / Dashboard"
+            title="Main Page"
+            subtitle="Overview of current projects, budgets, and latest activity."
+          />
 
           <StatsSection data={stats} />
           <ProjectList projects={mockProjects} />
