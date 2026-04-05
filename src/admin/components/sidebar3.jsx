@@ -4,7 +4,7 @@ import arrow from "../../assets/arrow.svg";
 import { ChevronDown, Settings } from "lucide-react";
 
 function sidebar3({ onBackClick, onSettingsClick, active = "settings" }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState({
     name: "Mobiel Banking App",
     status: "Active",
