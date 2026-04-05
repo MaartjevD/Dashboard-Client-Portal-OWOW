@@ -39,19 +39,19 @@ input {
 
 @font-face {
   font-family: "Neue Montreal";
-  src: url("/fonts/NeueMontreal-Regular.otf") format("opentype");
+  src: url("../../shared/styles/ppneuemontreal-medium.otf") format("opentype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Neue Montreal";
-  src: url("/fonts/NeueMontreal-Medium.otf") format("opentype");
+  src: url("../../shared/styles/ppneuemontreal-book.otf") format("opentype");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Neue Montreal";
-  src: url("/fonts/NeueMontreal-Bold.otf") format("opentype");
+  src: url("../../shared/styles/ppneuemontreal-bold.otf") format("opentype");
   font-weight: 700;
 }
 
