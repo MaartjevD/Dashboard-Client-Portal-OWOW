@@ -38,6 +38,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/projects/:projectId/Updates" element={<ProjectUpdates data={data} />} />
         <Route path="/projects/:projectId/Documents" element={<ProjectDocuments data={data} />} />
         <Route path="/projects/:projectId/Documents/add" element={<DocumentInputForm data={data} />} />
+        <Route path="/projects/add/:clientId/:clientName/:companyName" element={<DocumentInputForm data={data} />} />
       </Routes>
     </Router>
   </React.StrictMode>,
