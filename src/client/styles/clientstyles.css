@@ -1,0 +1,283 @@
+@import "../../shared/styles/variables.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  background: #050505;
+}
+
+.dashboard-page {
+  min-height: 100vh;
+  background: #050505;
+}
+
+.dashboard-container {
+  width: 1195px;
+  margin-left: 256px;
+  min-height: 100vh;
+  background: #050505;
+}
+
+/* =========================
+   Navbar
+========================= */
+
+.dashboard-navbar {
+  width: 1195px;
+  height: 80px;
+  padding: 14px 32px;
+  background: #1b1b1b;
+  border-bottom: 0.8px solid #2a2a2a;
+}
+
+.dashboard-navbar__search {
+  width: 402px;
+  height: 48px;
+  gap: 10px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  background: #151515;
+}
+
+.dashboard-navbar__search-icon {
+  color: #6f6f6f;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.dashboard-navbar__search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dashboard-navbar__search-input::placeholder {
+  color: #7d7d7d;
+}
+
+.dashboard-navbar__right {
+  gap: 14px;
+}
+
+.dashboard-navbar__language {
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  background: #151515;
+}
+
+.dashboard-navbar__lang-btn {
+  width: 40px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #d3d3d3;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.dashboard-navbar__lang-btn--active {
+  background: #ea8d67;
+  color: #ffffff;
+}
+
+.dashboard-navbar__icon-btn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #2a2a2a;
+  border-radius: 50%;
+  background: #151515;
+  color: #f1c96f;
+  cursor: pointer;
+}
+
+.dashboard-navbar__bell {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.dashboard-navbar__notification-dot {
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7b5b;
+}
+
+.dashboard-navbar__profile {
+  gap: 10px;
+  color: #ffffff;
+}
+
+.dashboard-navbar__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dashboard-navbar__user-name {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dashboard-navbar__arrow {
+  font-size: 10px;
+  color: #cfcfcf;
+}
+
+/* =========================
+   Header
+========================= */
+
+.project-header {
+  width: 1195px;
+  background: #050505;
+  padding: 22px 24px 0;
+}
+
+.project-header__breadcrumbs {
+  gap: 6px;
+  color: #a9a9a9;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.project-header__heading {
+  padding-bottom: 6px;
+}
+
+.project-header__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.project-header__subtitle {
+  margin: 12px 0 0;
+  color: #8d8d8d;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.project-header__status {
+  display: inline-flex;
+  min-width: 128px;
+  height: 34px;
+  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  background: #244f92;
+  color: #83b7ff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =========================
+   TabBar
+========================= */
+
+.project-tabbar {
+  width: 1195px;
+  margin-top: 14px;
+  gap: 30px;
+  border-top: 1px solid #222222;
+  border-bottom: 1px solid #222222;
+  padding: 0 32px;
+  background: #050505;
+}
+
+.project-tabbar__tab {
+  position: relative;
+  gap: 8px;
+  height: 52px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #eeeeee;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.project-tabbar__icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.project-tabbar__tab--active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 118px;
+  height: 4px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+/* =========================
+   Slack Chat Icon
+========================= */
+
+.slack-chat-icon {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  width: 62px;
+  height: 62px;
+  border: none;
+  border-radius: 50%;
+  background: #f1f1f1;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.slack-chat-icon__bubble {
+  position: relative;
+  width: 22px;
+  height: 18px;
+  border-radius: 12px;
+  background: #cfc0f1;
+  display: block;
+}
+
+.slack-chat-icon__bubble::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  bottom: -4px;
+  width: 8px;
+  height: 8px;
+  background: #cfc0f1;
+  border-bottom-left-radius: 8px;
+  transform: rotate(35deg);
+}

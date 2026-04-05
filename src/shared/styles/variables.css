@@ -1,0 +1,57 @@
+:root {
+  --color-bg-primary: #0b0b0b;
+  --color-bg-secondary: #171717;
+  --color-border: #252525;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #bdbdbd;
+  --color-text-muted: #8a8a8a;
+  --color-accent: #f47c57;
+  --color-icon-dark: #111111;
+  --color-chat-bg: #ffffff;
+
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-full: 999px;
+
+  --shadow-chat: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+  --navbar-padding-y: 14px;
+  --navbar-padding-x: 32px;
+
+  --search-width: 380px;
+  --search-height: 48px;
+
+  --icon-btn-size: 40px;
+  --avatar-size: 40px;
+
+  --chat-size: 64px;
+  --chat-right: 28px;
+  --chat-bottom: 28px;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 15px;
+}
+
+:root {
+  --page-side-padding: 24px;
+  --project-header-top-padding: 36px;
+  --project-header-bottom-padding: 0;
+
+  --project-breadcrumb-color: #cfcfcf;
+  --project-title-color: #ffffff;
+  --project-subtitle-color: #8f8f8f;
+  --project-border-color: #242424;
+
+  --project-title-size: 58px;
+  --project-subtitle-size: 18px;
+  --project-breadcrumb-size: 14px;
+  --project-tab-size: 14px;
+  --project-status-size: 14px;
+
+  --project-status-bg: #1c4f95;
+  --project-status-color: #7fb6ff;
+
+  --project-tab-active-line: #ffffff;
+}
