@@ -1,16 +1,18 @@
-function UpdateList({ projects }) {
-  const latestUpdates = projects
-    .flatMap((project) =>
-      project.updates.map((update) => ({
+import { formatDate, sortUpdatesByDate } from "../../utils/projectHelpers";
+
+function UpdateList({ projects = [] }) {
+  const latestUpdates = sortUpdatesByDate(
+    projects.flatMap((project) =>
+      (project.updates || []).map((update) => ({
         ...update,
         projectName: project.name,
       }))
     )
-    .slice(0, 2);
+  ).slice(0, 2);
 
   return (
     <section className="mb-5">
-      <h3 className="section-title">Recent Update</h3>
+      <h3 className="section-title">Recent Updates</h3>
 
       <div className="row g-4">
         {latestUpdates.map((item) => (
@@ -22,7 +24,7 @@ function UpdateList({ projects }) {
               </div>
 
               <p className="update-description">{item.description}</p>
-              <span className="update-time">{item.date}</span>
+              <span className="update-time">{formatDate(item.date)}</span>
             </div>
           </div>
         ))}

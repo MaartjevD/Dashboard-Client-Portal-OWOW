@@ -1,7 +1,9 @@
-function RecentUpdatesGrid({ updates }) {
+import { formatDate } from "../../utils/projectHelpers";
+
+function RecentUpdatesGrid({ updates = [] }) {
   return (
     <section className="mb-4">
-      <h3 className="recent-update-title">Recent Update</h3>
+      <h3 className="recent-update-title">Recent Updates</h3>
 
       <div className="row g-4">
         {updates.map((item) => (
@@ -15,12 +17,18 @@ function RecentUpdatesGrid({ updates }) {
                     item.kind === "milestone" ? "update-icon-orange" : "update-icon-blue"
                   }`}
                 >
-                  <i className={`bi ${item.kind === "milestone" ? "bi-arrow-up-right" : "bi-arrow-clockwise"}`}></i>
+                  <i
+                    className={`bi ${
+                      item.kind === "milestone" ? "bi-arrow-up-right" : "bi-arrow-clockwise"
+                    }`}
+                  ></i>
                 </div>
               </div>
 
               <p className="recent-update-description">{item.description}</p>
-              <span className="recent-update-time">{item.timeAgo}</span>
+              <span className="recent-update-time">
+                {item.timeAgo || formatDate(item.date)}
+              </span>
             </div>
           </div>
         ))}
