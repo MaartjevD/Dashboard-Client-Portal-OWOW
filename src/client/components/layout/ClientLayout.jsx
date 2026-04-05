@@ -12,53 +12,44 @@ export default function ClientLayout() {
 
   const isProjectRoute = location.pathname.startsWith("/projects/");
   const isProjectsPage = location.pathname === "/projects";
-  const isDashboardPage = location.pathname === "/dashboard";
-
   const activeProject = mockProjects.find((project) => project.id === projectId) || null;
 
-  let topbarTitle = "Dashboard";
-  let topbarSubtitle = "Welcome to your client portal overview.";
-  let showSearch = true;
-  let searchPlaceholder = "Search...";
+  let topbarTitle = "Main Page";
+  let topbarSubtitle = "Pages / Dashboard";
+  let searchPlaceholder = "Search projects, documents, updates...";
 
   if (isProjectsPage) {
     topbarTitle = "Projects";
-    topbarSubtitle = "Browse all active and completed projects.";
+    topbarSubtitle = "Pages / Projects";
     searchPlaceholder = "Search projects...";
   }
 
   if (isProjectRoute && activeProject) {
     topbarTitle = activeProject.name;
-    topbarSubtitle = "Track progress, budget, files, and updates.";
+    topbarSubtitle = `Pages / Projects / ${activeProject.name}`;
     searchPlaceholder = `Search inside ${activeProject.name}...`;
   }
 
-  if (isDashboardPage) {
-    topbarTitle = "Dashboard";
-    topbarSubtitle = "Monitor projects, updates, and key metrics.";
-    searchPlaceholder = "Search dashboard content...";
-  }
-
   return (
-    <div className="client-shell d-flex">
+    <div className="client-app-shell">
       <Sidebar
         projects={mockProjects}
         activeProjectId={projectId || null}
         showProjectsMenu={isProjectRoute || isProjectsPage}
       />
 
-      <div className="client-main d-flex flex-column flex-grow-1 min-vh-100">
+      <div className="client-main-shell d-flex flex-column">
         <Topbar
           title={topbarTitle}
           subtitle={topbarSubtitle}
-          showSearch={showSearch}
+          showSearch={true}
           searchPlaceholder={searchPlaceholder}
         />
 
-        <main className="page-content flex-grow-1">
-          <div className="container-fluid px-3 px-lg-4 py-4">
-            <Outlet />
-          </div>
+        <main className="client-page-area flex-grow-1">
+          <div className="page-breadcrumb small mb-2">{topbarSubtitle}</div>
+          <h1 className="page-main-title mb-4">{topbarTitle}</h1>
+          <Outlet />
         </main>
 
         <Footer />
