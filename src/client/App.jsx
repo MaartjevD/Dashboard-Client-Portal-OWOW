@@ -1,6 +1,6 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import DashboardPage from "./pages/DashboardPage";
-import ProjectPage from "./pages/ProjectPage";
+import { Navigate, Route, Routes } from "react-router-dom";
+import DashboardPage from "./Pages/DashboardPage";
+import ProjectPage from "./Pages/ProjectPage";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/projects/:projectId" element={<ProjectPage />} />
+      <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   );
 }
