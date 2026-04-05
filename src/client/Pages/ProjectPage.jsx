@@ -1,4 +1,4 @@
-import { useParams, useSearchParams, Navigate } from "react-router-dom";
+import { Navigate, useParams, useSearchParams } from "react-router-dom";
 
 import Sidebar from "../components/layout/Sidebar";
 import TopNavbar from "../components/layout/TopNavbar";
@@ -12,13 +12,13 @@ import ProjectBudgetPage from "./ProjectBudgetPage";
 import ProjectDocumentsPage from "./ProjectDocumentsPage";
 import ProjectUpdatePage from "./ProjectUpdatePage";
 
-import { getProjectById } from "../utils/projectHelpers";
+import { getProjectById, getValidProjectTab } from "../utils/projectHelpers";
 
 function ProjectPage() {
   const { projectId } = useParams();
   const [searchParams] = useSearchParams();
 
-  const tab = (searchParams.get("tab") || "overview").toLowerCase();
+  const tab = getValidProjectTab(searchParams.get("tab"));
   const project = getProjectById(projectId);
 
   if (!project) {
@@ -32,7 +32,6 @@ function ProjectPage() {
       case "documents":
         return <ProjectDocumentsPage project={project} />;
       case "update":
-      case "updates":
         return <ProjectUpdatePage project={project} />;
       case "overview":
       default:
