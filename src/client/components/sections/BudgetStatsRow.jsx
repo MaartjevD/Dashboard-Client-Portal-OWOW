@@ -1,22 +1,24 @@
-function BudgetStatsRow() {
+import { formatCurrency } from "../../utils/projectHelpers";
+
+function BudgetStatsRow({ budget }) {
   const stats = [
     {
       id: 1,
       icon: "bi-currency-euro",
       label: "Monthly Budget",
-      value: "€25,000",
+      value: formatCurrency(budget.monthly.total),
     },
     {
       id: 2,
       icon: "bi-graph-down-arrow",
       label: "Monthly Expenses",
-      value: "€18,750",
+      value: formatCurrency(budget.monthly.spent),
     },
     {
       id: 3,
       icon: "bi-arrow-up-right",
       label: "Remaining Balance",
-      value: "€6,250",
+      value: formatCurrency(budget.monthly.remaining),
     },
   ];
 

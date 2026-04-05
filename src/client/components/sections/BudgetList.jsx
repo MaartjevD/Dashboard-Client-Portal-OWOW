@@ -1,66 +1,18 @@
-// /* ===================== BUDGET LIST ===================== */
+import { formatCurrency, getStatusClass } from "../../utils/projectHelpers";
 
-// function BudgetList() {
-//   return (
-//     <section className="mb-4">
-//       <h3 className="section-title">Budget Overview</h3>
-
-//       <div className="row g-4">
-//         <div className="col-xl-4">
-//           <div className="custom-card">
-//             <h4>Project Alpha</h4>
-//             <p>€145,000 / €230,000</p>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default BudgetList;
-function BudgetList() {
-  const budgets = [
-    {
-      id: 1,
-      name: "Project Alpha",
-      status: "In Progress",
-      statusClass: "badge-progress",
-      spent: "€145,000",
-      remaining: "€85,000",
-      total: "€230,000",
-    },
-    {
-      id: 2,
-      name: "Project Beta",
-      status: "Planning",
-      statusClass: "badge-planning",
-      spent: "€0",
-      remaining: "€100,000",
-      total: "€100,000",
-    },
-    {
-      id: 3,
-      name: "Project Teta",
-      status: "In Progress",
-      statusClass: "badge-progress",
-      spent: "€75,000",
-      remaining: "€25,000",
-      total: "€100,000",
-    },
-  ];
-
+function BudgetList({ projects }) {
   return (
     <section className="mb-5">
       <h3 className="section-title">Budget Overview (Active Projects)</h3>
 
       <div className="row g-4">
-        {budgets.map((item) => (
-          <div className="col-12 col-lg-6 col-xl-4" key={item.id}>
+        {projects.map((project) => (
+          <div className="col-12 col-lg-6 col-xl-4" key={project.id}>
             <div className="custom-card budget-card">
               <div className="project-card-top">
-                <h4 className="project-title">{item.name}</h4>
-                <span className={`status-badge ${item.statusClass}`}>
-                  {item.status}
+                <h4 className="project-title">{project.name}</h4>
+                <span className={`status-badge ${getStatusClass(project.status)}`}>
+                  {project.status}
                 </span>
               </div>
 
@@ -73,9 +25,9 @@ function BudgetList() {
                   <div className="budget-row">
                     <div>
                       <p className="budget-label">Spent</p>
-                      <small>63% of total</small>
+                      <small>Project budget used</small>
                     </div>
-                    <span>{item.spent}</span>
+                    <span>{formatCurrency(project.budget.spent)}</span>
                   </div>
 
                   <div className="budget-row">
@@ -83,12 +35,12 @@ function BudgetList() {
                       <p className="budget-label">Remaining</p>
                       <small>Available budget</small>
                     </div>
-                    <span>{item.remaining}</span>
+                    <span>{formatCurrency(project.budget.remaining)}</span>
                   </div>
 
                   <div className="budget-total">
                     <span>Total Budget</span>
-                    <strong>{item.total}</strong>
+                    <strong>{formatCurrency(project.budget.total)}</strong>
                   </div>
                 </div>
               </div>

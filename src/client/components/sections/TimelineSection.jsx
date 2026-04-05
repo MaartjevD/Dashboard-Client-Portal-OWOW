@@ -1,20 +1,10 @@
-function TimelineSection() {
+import { formatDate } from "../../utils/projectHelpers";
+
+function TimelineSection({ project }) {
   const timelineData = [
-    {
-      id: 1,
-      label: "Start Date",
-      value: "1 JANUARY 2026",
-    },
-    {
-      id: 2,
-      label: "Finishing Date",
-      value: "1 FEBRUARY 2026",
-    },
-    {
-      id: 3,
-      label: "Title of Project",
-      value: "DESIGN & DEVELOPMENT",
-    },
+    { id: 1, label: "Start Date", value: formatDate(project.startDate) },
+    { id: 2, label: "Finishing Date", value: formatDate(project.finishDate) },
+    { id: 3, label: "Title of Project", value: project.projectTitle },
   ];
 
   return (

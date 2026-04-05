@@ -1,23 +1,5 @@
-// import Navbar from "../components/Navbar";
-// import Header from "../components/Header";
-// import TabBar from "../components/TabBar";
-// import SlackChatIcon from "../components/SlackChatIcon";
+import mockProjects from "../../shared/data/mockProjects";
 
-// function DashboardPage() {
-//   return (
-//     <div className="dashboard-page">
-//       <div className="dashboard-container">
-//         <Navbar />
-//         <Header />
-//         <TabBar />
-//       </div>
-
-//       <SlackChatIcon />
-//     </div>
-//   );
-// }
-
-// export default DashboardPage;
 import Sidebar from "../components/layout/Sidebar";
 import TopNavbar from "../components/layout/TopNavbar";
 import PageHeader from "../components/layout/PageHeader";
@@ -29,32 +11,37 @@ import BudgetList from "../components/sections/BudgetList";
 import UpdateList from "../components/sections/UpdateList";
 
 function DashboardPage() {
+  const totalProjects = mockProjects.length;
+  const inProgress = mockProjects.filter((p) => p.status === "In Progress").length;
+  const planning = mockProjects.filter((p) => p.status === "Planning").length;
+  const completed = mockProjects.filter((p) => p.status === "Completed").length;
+
   const stats = [
     {
       id: 1,
       title: "Total Projects",
-      value: "12",
+      value: String(totalProjects).padStart(2, "0"),
       icon: "bi-folder2-open",
       color: "stat-yellow",
     },
     {
       id: 2,
       title: "In Progress",
-      value: "03",
+      value: String(inProgress).padStart(2, "0"),
       icon: "bi-graph-up-arrow",
       color: "stat-blue",
     },
     {
       id: 3,
       title: "Planning",
-      value: "02",
+      value: String(planning).padStart(2, "0"),
       icon: "bi-clock-history",
       color: "stat-orange",
     },
     {
       id: 4,
       title: "Completed",
-      value: "07",
+      value: String(completed).padStart(2, "0"),
       icon: "bi-check-circle",
       color: "stat-green",
     },
@@ -68,15 +55,12 @@ function DashboardPage() {
         <TopNavbar />
 
         <div className="dashboard-content">
-          <PageHeader
-            breadcrumb="Pages / Dashboard"
-            title="Main Page"
-          />
+          <PageHeader breadcrumb="Pages / Dashboard" title="Main Page" />
 
           <StatsSection data={stats} />
-          <ProjectList />
-          <BudgetList />
-          <UpdateList />
+          <ProjectList projects={mockProjects} />
+          <BudgetList projects={mockProjects} />
+          <UpdateList projects={mockProjects} />
         </div>
 
         <Footer />

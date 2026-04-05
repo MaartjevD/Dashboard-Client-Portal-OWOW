@@ -1,31 +1,4 @@
-function LinksCard() {
-  const links = [
-    {
-      id: 1,
-      title: "Design Phase",
-      subtitle: "You can see the design phase",
-      link: "#",
-    },
-    {
-      id: 2,
-      title: "Project Plan",
-      subtitle: "Project plan will update please recheck it",
-      link: "#",
-    },
-    {
-      id: 3,
-      title: "Slack Group",
-      subtitle: "We are always online on Slack",
-      link: "#",
-    },
-    {
-      id: 4,
-      title: "Git",
-      subtitle: "You can be updated with our github",
-      link: "#",
-    },
-  ];
-
+function LinksCard({ links }) {
   return (
     <section className="mb-4">
       <h3 className="documents-links-title">Links</h3>
@@ -35,7 +8,7 @@ function LinksCard() {
           {links.map((item) => (
             <div className="col-12 col-md-6" key={item.id}>
               <a
-                href={item.link}
+                href={item.url}
                 target="_blank"
                 rel="noreferrer"
                 className="project-link-box"

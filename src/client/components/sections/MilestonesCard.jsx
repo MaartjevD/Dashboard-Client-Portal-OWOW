@@ -1,25 +1,4 @@
-function MilestonesCard() {
-  const milestones = [
-    {
-      id: 1,
-      date: "16.03.2026",
-      title: "Client Feedback Sessie",
-      subtitle: "Review van development progress",
-    },
-    {
-      id: 2,
-      date: "02.05.2026",
-      title: "Client Feedback Sessie",
-      subtitle: "Review van development progress",
-    },
-    {
-      id: 3,
-      date: "28.06.2026",
-      title: "Client Feedback Sessie",
-      subtitle: "Review van development progress",
-    },
-  ];
-
+function MilestonesCard({ milestones }) {
   return (
     <section className="mb-3">
       <div className="custom-card milestones-card">
@@ -32,7 +11,7 @@ function MilestonesCard() {
           {milestones.map((item) => (
             <div className="col-12 col-md-6 col-xl-4" key={item.id}>
               <div className="milestone-small-card">
-                <p className="milestone-date">{item.date}</p>
+                <p className="milestone-date">{item.dueDate}</p>
                 <h4 className="milestone-title">{item.title}</h4>
                 <p className="milestone-subtitle">{item.subtitle}</p>
               </div>
