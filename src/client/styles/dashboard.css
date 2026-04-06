@@ -1,6 +1,5 @@
 /* =========================================================
    CLIENT DASHBOARD STYLES
-   اختصاصی داشبورد کلاینت
    - layout
    - shared dashboard components
    - dashboard pages
@@ -722,7 +721,7 @@
 .slack-chat-button {
   position: fixed;
   right: 28px;
-  bottom: 28px;
+  bottom: 58px;
   width: 68px;
   height: 68px;
   border-radius: 50%;
@@ -948,6 +947,40 @@
 }
 
 /* PAGE 1 - BudgetList */
+/* =========================================================
+   BUDGET CARD LINK
+========================================================= */
+.budget-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.budget-card-link:hover,
+.budget-card-link:focus,
+.budget-card-link:active,
+.budget-card-link:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.budget-card-link .budget-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.budget-card-link:hover .budget-card {
+  transform: translateY(-4px);
+}
+
+.budget-card-link:focus-visible {
+  outline: none;
+}
+
+.budget-card-link:focus-visible .budget-card {
+  box-shadow: 0 0 0 2px rgba(239, 125, 87, 0.35);
+}
+
+
 .budget-card {
   min-height: 210px;
 }
