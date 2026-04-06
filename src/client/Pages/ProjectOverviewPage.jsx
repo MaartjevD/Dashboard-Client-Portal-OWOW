@@ -10,7 +10,7 @@ function ProjectOverviewPage({ project }) {
   const stats = [
     {
       id: 1,
-      title: "Total Projects",
+      title: "Total Tasks",
       value: String(project.tasks.totalProjects),
       icon: "bi-folder2-open",
       color: "stat-yellow",
@@ -31,7 +31,7 @@ function ProjectOverviewPage({ project }) {
     },
     {
       id: 4,
-      title: "Overall Progress",
+      title: "Overall Progress Total",
       value: `${project.tasks.overallProgress}%`,
       icon: "bi-graph-up-arrow",
       color: "stat-orange",

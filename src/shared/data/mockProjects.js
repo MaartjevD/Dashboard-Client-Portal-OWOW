@@ -79,6 +79,7 @@ const mockProjects = [
       email: "simone@owow.io",
       phone: "+6 57 50 38 69",
       social: "LinkedIn",
+      backgroundImage: "https://fekrait.com/uploads/topics/16750304198773.jpg",
     },
 
     links: [
@@ -247,6 +248,7 @@ const mockProjects = [
       email: "sarah@novagrid.com",
       phone: "+31 6 11 22 33 44",
       social: "LinkedIn",
+      backgroundImage: "https://www.ccl.org/wp-content/uploads/2020/04/employee-engagement-and-motivation-center-for-creative-leadership.jpg",
     },
     links: [
       { id: "beta-link-1", title: "Discovery Notes", subtitle: "Stakeholder workshop output", url: "#" },
@@ -391,6 +393,7 @@ const mockProjects = [
       email: "daniel@pixelforge.com",
       phone: "+31 6 55 66 77 88",
       social: "LinkedIn",
+      backgroundImage: "https://png.pngtree.com/png-clipart/20250101/original/pngtree-a-smiling-female-employee-posing-png-image_18496452.png",
     },
     links: [
       { id: "gamma-link-1", title: "Final Handoff", subtitle: "Delivery package for client", url: "#" },
