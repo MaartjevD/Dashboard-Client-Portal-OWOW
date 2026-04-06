@@ -5,6 +5,7 @@ import App from "./App";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "../shared/styles/global.css";
 import "./styles/dashboard.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

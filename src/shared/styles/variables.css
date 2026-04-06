@@ -1,57 +1,53 @@
-:root {
-  --color-bg-primary: #0b0b0b;
-  --color-bg-secondary: #171717;
-  --color-border: #252525;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #bdbdbd;
-  --color-text-muted: #8a8a8a;
-  --color-accent: #f47c57;
-  --color-icon-dark: #111111;
-  --color-chat-bg: #ffffff;
+/* =========================================================
+   DESIGN TOKENS / VARIABLES
+   Shared between client and admin
+========================================================= */
 
+:root {
+  /* Fonts */
+  --font-family-base: "Neue Montreal", Arial, Helvetica, sans-serif;
+
+  /* Core colors */
+  --color-bg-page: #050505;
+  --color-bg-surface: #111111;
+  --color-bg-surface-2: #171717;
+  --color-bg-surface-3: #1c1c1c;
+  --color-bg-sidebar: #0f0f10;
+  --color-bg-card: #1a1a1a;
+  --color-border: #272727;
+  --color-border-soft: #1f1f1f;
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d0d0d0;
+  --color-text-muted: #8d8d8d;
+  --color-text-faint: #777777;
+  --color-text-dark: #111111;
+
+  --color-accent: #ef7d57;
+  --color-danger: #ff5b5b;
+  --color-success: #49c16d;
+  --color-info: #6ea8ff;
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --top-navbar-height: 90px;
+  --footer-height: 86px;
+  --page-padding-x: 16px;
+  --page-padding-top: 16px;
+  --page-padding-bottom: 28px;
+
+  /* Radius */
   --radius-sm: 10px;
   --radius-md: 12px;
-  --radius-full: 999px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
 
-  --shadow-chat: 0 8px 24px rgba(0, 0, 0, 0.25);
+  /* Shadows */
+  --shadow-chat: 0 10px 30px rgba(0, 0, 0, 0.35);
 
-  --navbar-padding-y: 14px;
-  --navbar-padding-x: 32px;
-
-  --search-width: 380px;
-  --search-height: 48px;
-
-  --icon-btn-size: 40px;
-  --avatar-size: 40px;
-
-  --chat-size: 64px;
-  --chat-right: 28px;
-  --chat-bottom: 28px;
-
-  --font-size-xs: 12px;
-  --font-size-sm: 13px;
-  --font-size-md: 14px;
-  --font-size-lg: 15px;
+  /* Z-index */
+  --z-sidebar: 100;
+  --z-chat: 999;
 }
 
-:root {
-  --page-side-padding: 24px;
-  --project-header-top-padding: 36px;
-  --project-header-bottom-padding: 0;
 
-  --project-breadcrumb-color: #cfcfcf;
-  --project-title-color: #ffffff;
-  --project-subtitle-color: #8f8f8f;
-  --project-border-color: #242424;
-
-  --project-title-size: 58px;
-  --project-subtitle-size: 18px;
-  --project-breadcrumb-size: 14px;
-  --project-tab-size: 14px;
-  --project-status-size: 14px;
-
-  --project-status-bg: #1c4f95;
-  --project-status-color: #7fb6ff;
-
-  --project-tab-active-line: #ffffff;
-}

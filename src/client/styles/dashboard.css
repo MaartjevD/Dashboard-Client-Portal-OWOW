@@ -1,66 +1,11 @@
 /* =========================================================
-   GLOBAL
+   CLIENT DASHBOARD STYLES
+   اختصاصی داشبورد کلاینت
+   - layout
+   - shared dashboard components
+   - dashboard pages
+   - project pages
 ========================================================= */
-* {
-  box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-}
-
-/* body {
-  background: #050505;
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-} */
-body {
-  background: #050505;
-  color: #ffffff;
-  font-family: "Neue Montreal", Arial, Helvetica, sans-serif;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input {
-  font-family: inherit;
-}
-
-/* =========================================================
-   FONT - PUBLIC METHOD
-========================================================= */
-
-@font-face {
-  font-family: "Neue Montreal";
-  src: url("../../shared/styles/ppneuemontreal-medium.otf") format("opentype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Neue Montreal";
-  src: url("../../shared/styles/ppneuemontreal-book.otf") format("opentype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Neue Montreal";
-  src: url("../../shared/styles/ppneuemontreal-bold.otf") format("opentype");
-  font-weight: 700;
-}
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-* {
-  box-sizing: border-box;
-}
 
 /* =========================================================
    LAYOUT
@@ -1476,4 +1421,92 @@ input {
     height: 56px;
     font-size: 24px;
   }
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-logo-image {
+  width: 188px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.sidebar-item,
+.project-subitem,
+.profile-box {
+  text-decoration: none;
+}
+
+.sidebar-item-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.sidebar-coming-soon {
+  font-size: 12px;
+  color: #9f9f9f;
+}
+
+.profile-box {
+  border: none;
+  background: transparent;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-card-link {
+  display: block;
+}
+
+.project-card-link:focus-visible .project-card,
+.project-subitem:focus-visible,
+.sidebar-item:focus-visible,
+.tabbar-item:focus-visible,
+.profile-box:focus-visible,
+.icon-btn:focus-visible,
+.lang-btn:focus-visible,
+.chat-button:focus-visible {
+  outline: 2px solid #ef7d57;
+  outline-offset: 3px;
+}
+
+.clickable-card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.clickable-card:hover {
+  transform: translateY(-2px);
+}
+
+.budget-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.budget-circle-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.budget-circle-inner strong {
+  font-size: 18px;
+}
+
+.budget-circle-inner span {
+  font-size: 12px;
+  color: #9f9f9f;
+}
+
+.badge-default {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
 }

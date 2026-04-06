@@ -1,3 +1,34 @@
+@import "./variables.css";
+
+/* =========================================================
+   GLOBAL / SHARED BASE STYLES
+   Shared between client and admin
+========================================================= */
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("../../shared/styles/ppneuemontreal-book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("../../shared/styles/ppneuemontreal-medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("../../shared/styles/ppneuemontreal-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -13,9 +44,17 @@ body,
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f8f9fa;
-  color: #222;
+  font-family: var(--font-family-base);
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 img {
@@ -28,4 +67,12 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+#root {
+  isolation: isolate;
 }
