@@ -717,29 +717,94 @@
 }
 
 /* =========================================================
-   SHARED COMPONENT - CHAT BUTTON
+   SHARED COMPONENT - SLACK CHAT BUTTON
 ========================================================= */
-.chat-button {
+.slack-chat-button {
   position: fixed;
-  right: 36px;
-  bottom: 118px;
-  width: 64px;
-  height: 64px;
-  border: none;
+  right: 28px;
+  bottom: 28px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
-  background: #e8e8e8;
-  color: #111111;
-  display: flex;
+  background: linear-gradient(180deg, #ffffff 0%, #e9e9e9 100%);
+  color: #4a154b;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  cursor: pointer;
-  z-index: 999;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  z-index: 1200;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
 }
 
-.chat-button i {
-  line-height: 1;
+.slack-chat-button:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.42);
+}
+
+.slack-chat-button:focus-visible {
+  outline: 2px solid #ef7d57;
+  outline-offset: 4px;
+}
+
+.slack-chat-icon-wrapper {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slack-chat-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.slack-chat-tooltip {
+  position: absolute;
+  right: 82px;
+  bottom: 50%;
+  transform: translateY(50%) translateX(10px);
+  background: rgba(17, 17, 17, 0.96);
+  color: #ffffff;
+  border: 1px solid #2b2b2b;
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.slack-chat-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background: rgba(17, 17, 17, 0.96);
+  border-top: 1px solid #2b2b2b;
+  border-right: 1px solid #2b2b2b;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.slack-chat-button:hover .slack-chat-tooltip,
+.slack-chat-button:focus-visible .slack-chat-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(50%) translateX(0);
 }
 
 /* =========================================================
@@ -1818,13 +1883,23 @@
     justify-content: space-between;
   }
 
-  .chat-button {
-    right: 20px;
-    bottom: 95px;
-    width: 56px;
-    height: 56px;
-    font-size: 24px;
-  }
+.slack-chat-button {
+  right: 18px;
+  bottom: 18px;
+  width: 58px;
+  height: 58px;
+}
+
+.slack-chat-icon-wrapper {
+  width: 28px;
+  height: 28px;
+}
+
+.slack-chat-tooltip {
+  right: 70px;
+  font-size: 13px;
+  padding: 8px 12px;
+}
 
   .mobile-sidebar-toggle {
     top: 14px;

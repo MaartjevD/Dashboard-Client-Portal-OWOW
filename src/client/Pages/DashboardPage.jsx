@@ -9,6 +9,7 @@ import StatsSection from "../components/common/StatsSection";
 import ProjectList from "../components/sections/ProjectList";
 import BudgetList from "../components/sections/BudgetList";
 import UpdateList from "../components/sections/UpdateList";
+import ChatButton from "../components/common/ChatButton";
 
 function DashboardPage() {
   const totalProjects = mockProjects.length;
@@ -66,7 +67,7 @@ function DashboardPage() {
           <BudgetList projects={mockProjects} />
           <UpdateList projects={mockProjects} />
         </div>
-
+        <ChatButton />
         <Footer />
       </div>
     </div>
