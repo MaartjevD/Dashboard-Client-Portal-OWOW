@@ -5,9 +5,6 @@ function BudgetSummaryCard({ data, onSave }) {
   const [budget, setBudget] = useState(data.budget);
   const [spent, setSpent] = useState(data.spent);
 
-  const remaining = budget - spent;
-  const percentage = budget > 0 ? ((spent / budget) * 100).toFixed(1) : 0;
-
   const handleSave = () => {
     onSave({
       ...data,
@@ -30,78 +27,115 @@ function BudgetSummaryCard({ data, onSave }) {
       : 0;
 
   return (
-    <section className="budget-summary-card">
-      <div className="budget-summary-card__head">
-        <div>
-          <h2 className="budget-summary-card__title">
-            {data.month} <span className="budget-summary-card__current">(Current)</span>
-          </h2>
-        </div>
-
-        {!isEditing ? (
-          <button
-            className="budget-card__edit-btn"
-            onClick={() => setIsEditing(true)}
-          >
-            Edit
-          </button>
-        ) : (
-          <div className="inline-edit-actions">
-            <button
-              className="inline-edit-actions__cancel"
-              onClick={handleCancel}
-            >
-              Cancel
-            </button>
-            <button
-              className="inline-edit-actions__save"
-              onClick={handleSave}
-            >
-              Save
-            </button>
+    <section className="card border-0 shadow-sm">
+      <div className="card-body p-4">
+        
+        {/* Header */}
+        <div className="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 className="h5 fw-semibold mb-0">
+              {data.month}{" "}
+              <span className="text-muted small">(Current)</span>
+            </h2>
           </div>
-        )}
-      </div>
 
-      <div className="budget-summary-card__stats">
-        <div className="budget-stat">
-          <span className="budget-stat__label">BUDGET</span>
           {!isEditing ? (
-            <div className="budget-stat__inputlike">€ {data.budget}</div>
+            <button
+              type="button"
+              className="btn btn-outline-primary btn-sm"
+              onClick={() => setIsEditing(true)}
+            >
+              Edit
+            </button>
           ) : (
-            <input
-              className="budget-stat__input"
-              type="number"
-              value={budget}
-              onChange={(e) => setBudget(e.target.value)}
-            />
+            <div className="d-flex gap-2">
+              <button
+                type="button"
+                className="btn btn-outline-secondary btn-sm"
+                onClick={handleCancel}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className="btn btn-primary btn-sm"
+                onClick={handleSave}
+              >
+                Save
+              </button>
+            </div>
           )}
         </div>
 
-        <div className="budget-stat">
-          <span className="budget-stat__label">SPENT</span>
-          {!isEditing ? (
-            <div className="budget-stat__inputlike">€ {data.spent}</div>
-          ) : (
-            <input
-              className="budget-stat__input"
-              type="number"
-              value={spent}
-              onChange={(e) => setSpent(e.target.value)}
-            />
-          )}
-        </div>
+        {/* Stats */}
+        <div className="row g-4">
+          
+          {/* Budget */}
+          <div className="col-12 col-md-6 col-xl-3">
+            <div className="d-flex flex-column">
+              <span className="text-uppercase text-muted small fw-semibold mb-1">
+                Budget
+              </span>
 
-        <div className="budget-stat">
-          <span className="budget-stat__label">REMAINING</span>
-          <div className="budget-stat__value budget-stat__value--green">
-            € {currentRemaining}
+              {!isEditing ? (
+                <div className="fw-semibold fs-5">€ {data.budget}</div>
+              ) : (
+                <input
+                  className="form-control"
+                  type="number"
+                  value={budget}
+                  onChange={(e) => setBudget(e.target.value)}
+                />
+              )}
+            </div>
           </div>
-        </div>
 
-        <div className="budget-stat">
-          <span className="budget-stat__label">PERCENTAGE</span>
-          <div className="budget-stat__value">{currentPercentage} %</div>
+          {/* Spent */}
+          <div className="col-12 col-md-6 col-xl-3">
+            <div className="d-flex flex-column">
+              <span className="text-uppercase text-muted small fw-semibold mb-1">
+                Spent
+              </span>
+
+              {!isEditing ? (
+                <div className="fw-semibold fs-5">€ {data.spent}</div>
+              ) : (
+                <input
+                  className="form-control"
+                  type="number"
+                  value={spent}
+                  onChange={(e) => setSpent(e.target.value)}
+                />
+              )}
+            </div>
+          </div>
+
+          {/* Remaining */}
+          <div className="col-12 col-md-6 col-xl-3">
+            <div className="d-flex flex-column">
+              <span className="text-uppercase text-muted small fw-semibold mb-1">
+                Remaining
+              </span>
+
+              <div className="fw-bold fs-5 text-success">
+                € {currentRemaining}
+              </div>
+            </div>
+          </div>
+
+          {/* Percentage */}
+          <div className="col-12 col-md-6 col-xl-3">
+            <div className="d-flex flex-column">
+              <span className="text-uppercase text-muted small fw-semibold mb-1">
+                Percentage
+              </span>
+
+              <div className="fw-semibold fs-5">
+                {currentPercentage} %
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

@@ -19,19 +19,22 @@ function BudgetSection({ budgetData, setBudgetData }) {
   };
 
   return (
-    <section className="budget-section">
-      <BudgetSummaryCard
-        data={budgetData.current}
-        onSave={updateCurrentBudget}
-      />
+    <section className="container-fluid px-0">
+      <div className="mb-4">
+        <BudgetSummaryCard
+          data={budgetData.current}
+          onSave={updateCurrentBudget}
+        />
+      </div>
 
-      <div className="budget-section__grid">
+      <div className="row g-4">
         {budgetData.previous.map((item) => (
-          <BudgetMonthCard
-            key={item.id}
-            data={item}
-            onSave={(updatedMonth) => updatePreviousBudget(item.id, updatedMonth)}
-          />
+          <div key={item.id} className="col-12 col-md-6 col-xl-4">
+            <BudgetMonthCard
+              data={item}
+              onSave={(updatedMonth) => updatePreviousBudget(item.id, updatedMonth)}
+            />
+          </div>
         ))}
       </div>
     </section>

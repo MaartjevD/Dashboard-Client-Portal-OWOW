@@ -12,15 +12,18 @@ function DocumentsSection({ documentsData, setDocumentsData }) {
   };
 
   return (
-    <section className="documents-section">
-      <div className="documents-grid">
+    <section className="container-fluid px-0">
+      <div className="row g-4">
         {documentsData.map((item) => (
-          <DocumentCard
-            key={item.id}
-            data={item}
-            onSave={(updatedItem) => handleSaveDocument(item.id, updatedItem)}
-            onDelete={() => handleDeleteDocument(item.id)}
-          />
+          <div key={item.id} className="col-12 col-md-6 col-xl-4">
+            <DocumentCard
+              data={item}
+              onSave={(updatedItem) =>
+                handleSaveDocument(item.id, updatedItem)
+              }
+              onDelete={() => handleDeleteDocument(item.id)}
+            />
+          </div>
         ))}
       </div>
     </section>

@@ -1,10 +1,13 @@
 function SettingsInput({ label, value, placeholder = "" }) {
   return (
-    <div className="settings-input">
-      <label className="settings-input__label">{label}</label>
+    <div className="mb-3">
+      <label className="form-label small fw-semibold">
+        {label}
+      </label>
+
       <input
-        className="settings-input__field"
         type="text"
+        className="form-control"
         defaultValue={value}
         placeholder={placeholder}
       />

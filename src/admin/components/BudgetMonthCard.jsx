@@ -23,74 +23,86 @@ function BudgetMonthCard({ data, onSave }) {
   };
 
   return (
-    <section className="budget-month-card">
-      <div className="budget-month-card__head">
-        <h3 className="budget-month-card__title">{data.month}</h3>
+    <section className="card border-0 shadow-sm h-100">
+      <div className="card-body p-4">
+        <div className="d-flex justify-content-between align-items-center mb-4">
+          <h3 className="h5 mb-0 fw-semibold">{data.month}</h3>
 
-        {!isEditing ? (
-          <button
-            className="budget-card__edit-btn"
-            onClick={() => setIsEditing(true)}
-          >
-            Edit
-          </button>
-        ) : (
-          <div className="inline-edit-actions">
+          {!isEditing ? (
             <button
-              className="inline-edit-actions__cancel"
-              onClick={handleCancel}
+              type="button"
+              className="btn btn-outline-primary btn-sm"
+              onClick={() => setIsEditing(true)}
             >
-              Cancel
+              Edit
             </button>
-            <button
-              className="inline-edit-actions__save"
-              onClick={handleSave}
-            >
-              Save
-            </button>
+          ) : (
+            <div className="d-flex gap-2">
+              <button
+                type="button"
+                className="btn btn-outline-secondary btn-sm"
+                onClick={handleCancel}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className="btn btn-primary btn-sm"
+                onClick={handleSave}
+              >
+                Save
+              </button>
+            </div>
+          )}
+        </div>
+
+        <div className="d-flex flex-column gap-3">
+          <div className="d-flex justify-content-between align-items-center">
+            <span className="text-uppercase text-muted small fw-semibold">
+              Budget
+            </span>
+
+            {!isEditing ? (
+              <div className="fw-semibold fs-5">€ {data.budget}</div>
+            ) : (
+              <input
+                className="form-control w-auto"
+                type="number"
+                value={budget}
+                onChange={(e) => setBudget(e.target.value)}
+              />
+            )}
           </div>
-        )}
-      </div>
 
-      <div className="budget-month-card__content">
-        <div className="budget-month-card__row">
-          <span className="budget-stat__label">BUDGET</span>
-          {!isEditing ? (
-            <div className="budget-month-card__number">€ {data.budget}</div>
-          ) : (
-            <input
-              className="budget-stat__input"
-              type="number"
-              value={budget}
-              onChange={(e) => setBudget(e.target.value)}
-            />
-          )}
-        </div>
+          <div className="d-flex justify-content-between align-items-center">
+            <span className="text-uppercase text-muted small fw-semibold">
+              Spent
+            </span>
 
-        <div className="budget-month-card__row">
-          <span className="budget-stat__label">SPENT</span>
-          {!isEditing ? (
-            <div className="budget-month-card__number">€ {data.spent}</div>
-          ) : (
-            <input
-              className="budget-stat__input"
-              type="number"
-              value={spent}
-              onChange={(e) => setSpent(e.target.value)}
-            />
-          )}
-        </div>
+            {!isEditing ? (
+              <div className="fw-semibold fs-5">€ {data.spent}</div>
+            ) : (
+              <input
+                className="form-control w-auto"
+                type="number"
+                value={spent}
+                onChange={(e) => setSpent(e.target.value)}
+              />
+            )}
+          </div>
 
-        <div className="budget-month-card__row">
-          <span className="budget-stat__label">REMAINING</span>
-          <div
-            className={
-              remaining >= 0
-                ? "budget-month-card__number budget-month-card__number--yellow"
-                : "budget-month-card__number budget-month-card__number--red"
-            }
-          >
-            € {remaining}
+          <div className="d-flex justify-content-between align-items-center">
+            <span className="text-uppercase text-muted small fw-semibold">
+              Remaining
+            </span>
+
+            <div
+              className={`fw-bold fs-5 ${
+                remaining >= 0 ? "text-warning" : "text-danger"
+              }`}
+            >
+              € {remaining}
+            </div>
           </div>
         </div>
       </div>

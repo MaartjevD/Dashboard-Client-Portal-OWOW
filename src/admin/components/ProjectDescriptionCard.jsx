@@ -25,101 +25,107 @@ function ProjectDescriptionCard({ projectData, setProjectData }) {
   };
 
   return (
-    <section className="project-description-card">
-      <div className="project-description-card__head">
-        <div>
-          <h2 className="project-description-card__title">
-            Project Description
-          </h2>
-          <p className="project-description-card__subtitle">Description</p>
+    <section className="card border-0 shadow-sm h-100">
+      <div className="card-body p-4">
+        <div className="d-flex justify-content-between align-items-start mb-4">
+          <div>
+            <h2 className="h5 fw-semibold mb-1">Project Description</h2>
+            <p className="text-muted small mb-0">Description</p>
+          </div>
+
+          {!isEditing ? (
+            <button
+              type="button"
+              className="btn btn-outline-primary btn-sm"
+              onClick={() => setIsEditing(true)}
+            >
+              Edit
+            </button>
+          ) : (
+            <div className="d-flex gap-2">
+              <button
+                type="button"
+                className="btn btn-outline-secondary btn-sm"
+                onClick={handleCancel}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className="btn btn-primary btn-sm"
+                onClick={handleSave}
+              >
+                Save
+              </button>
+            </div>
+          )}
         </div>
 
         {!isEditing ? (
-          <button
-            className="project-description-card__edit-btn"
-            onClick={() => setIsEditing(true)}
-          >
-            Edit
-          </button>
+          <>
+            <div className="project-description-box">
+              {projectData.description}
+            </div>
+
+            <div className="row g-3">
+              <div className="col-12 col-md-6">
+                <label className="form-label text-muted small fw-semibold">
+                  Start Date
+                </label>
+                <div className="project-date-box">
+                  {projectData.startDate}
+                </div>
+              </div>
+
+              <div className="col-12 col-md-6">
+                <label className="form-label text-muted small fw-semibold">
+                  Target End Date
+                </label>
+                <div className="project-date-box">
+                  {projectData.targetEndDate}
+                </div>
+              </div>
+            </div>
+          </>
         ) : (
-          <div className="inline-edit-actions">
-            <button
-              className="inline-edit-actions__cancel"
-              onClick={handleCancel}
-            >
-              Cancel
-            </button>
-            <button
-              className="inline-edit-actions__save"
-              onClick={handleSave}
-            >
-              Save
-            </button>
-          </div>
+          <>
+            <div className="mb-4">
+              <textarea
+                className="form-control"
+                rows="5"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </div>
+
+            <div className="row g-3">
+              <div className="col-12 col-md-6">
+                <label className="form-label text-muted small fw-semibold">
+                  Start Date
+                </label>
+                <input
+                  className="form-control"
+                  type="text"
+                  value={startDate}
+                  onChange={(e) => setStartDate(e.target.value)}
+                />
+              </div>
+
+              <div className="col-12 col-md-6">
+                <label className="form-label text-muted small fw-semibold">
+                  Target End Date
+                </label>
+                <input
+                  className="form-control"
+                  type="text"
+                  value={targetEndDate}
+                  onChange={(e) => setTargetEndDate(e.target.value)}
+                />
+              </div>
+            </div>
+          </>
         )}
       </div>
-
-      {!isEditing ? (
-        <>
-          <div className="project-description-card__box">
-            {projectData.description}
-          </div>
-
-          <div className="project-description-card__dates">
-            <div>
-              <label className="project-description-card__label">
-                Start Date
-              </label>
-              <div className="project-description-card__input-like">
-                {projectData.startDate}
-              </div>
-            </div>
-
-            <div>
-              <label className="project-description-card__label">
-                Target end Date
-              </label>
-              <div className="project-description-card__input-like">
-                {projectData.targetEndDate}
-              </div>
-            </div>
-          </div>
-        </>
-      ) : (
-        <>
-          <textarea
-            className="project-description-card__textarea"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-
-          <div className="project-description-card__dates">
-            <div>
-              <label className="project-description-card__label">
-                Start Date
-              </label>
-              <input
-                className="project-description-card__real-input"
-                type="text"
-                value={startDate}
-                onChange={(e) => setStartDate(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label className="project-description-card__label">
-                Target end Date
-              </label>
-              <input
-                className="project-description-card__real-input"
-                type="text"
-                value={targetEndDate}
-                onChange={(e) => setTargetEndDate(e.target.value)}
-              />
-            </div>
-          </div>
-        </>
-      )}
     </section>
   );
 }

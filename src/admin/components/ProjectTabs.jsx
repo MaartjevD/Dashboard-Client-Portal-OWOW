@@ -1,51 +1,55 @@
 import { NavLink } from "react-router-dom";
 
-function ProjectTabs({ activeTab }) {
+function ProjectTabs() {
   return (
-    <div className="project-tabs">
-      <NavLink
-        to="/project-dashboard"
-        className={
-          activeTab === "overview"
-            ? "project-tabs__item project-tabs__item--active"
-            : "project-tabs__item"
-        }
-      >
-        OVERVIEW
-      </NavLink>
+    <div className="border-bottom mb-4">
+      <ul className="nav nav-tabs">
 
-      <NavLink
-        to="/budget"
-        className={
-          activeTab === "budget"
-            ? "project-tabs__item project-tabs__item--active"
-            : "project-tabs__item"
-        }
-      >
-        BUDGET
-      </NavLink>
+        <li className="nav-item">
+          <NavLink
+            to="/project-dashboard"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active fw-semibold" : "text-muted"}`
+            }
+          >
+            OVERVIEW
+          </NavLink>
+        </li>
 
-      <NavLink
-        to="/updates"
-        className={
-          activeTab === "updates"
-            ? "project-tabs__item project-tabs__item--active"
-            : "project-tabs__item"
-        }
-      >
-        UPDATES
-      </NavLink>
+        <li className="nav-item">
+          <NavLink
+            to="/budget"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active fw-semibold" : "text-muted"}`
+            }
+          >
+            BUDGET
+          </NavLink>
+        </li>
 
-      <NavLink
-        to="/documents"
-        className={
-          activeTab === "documents"
-            ? "project-tabs__item project-tabs__item--active"
-            : "project-tabs__item"
-        }
-      >
-        DOCUMENTEN
-      </NavLink>
+        <li className="nav-item">
+          <NavLink
+            to="/updates"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active fw-semibold" : "text-muted"}`
+            }
+          >
+            UPDATES
+          </NavLink>
+        </li>
+
+        <li className="nav-item">
+          <NavLink
+            to="/documents"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active fw-semibold" : "text-muted"}`
+            }
+          >
+            DOCUMENTEN
+          </NavLink>
+        </li>
+
+      </ul>
     </div>
   );
 }

@@ -4,22 +4,33 @@ import ClientInfoCard from "./ClientInfoCard";
 
 function OverviewSection({ projectData, setProjectData }) {
   return (
-    <section className="overview-section">
-      <TimelineCard
-        projectData={projectData}
-        setProjectData={setProjectData}
-      />
+    <section className="container-fluid px-0">
 
-      <div className="overview-section__bottom">
-        <ProjectDescriptionCard
+      {/* Top - Timeline */}
+      <div className="mb-4">
+        <TimelineCard
           projectData={projectData}
           setProjectData={setProjectData}
         />
+      </div>
 
-        <ClientInfoCard
-          projectData={projectData}
-          setProjectData={setProjectData}
-        />
+      {/* Bottom Section */}
+      <div className="row g-4">
+        
+        <div className="col-12 col-lg-6">
+          <ProjectDescriptionCard
+            projectData={projectData}
+            setProjectData={setProjectData}
+          />
+        </div>
+
+        <div className="col-12 col-lg-6">
+          <ClientInfoCard
+            projectData={projectData}
+            setProjectData={setProjectData}
+          />
+        </div>
+
       </div>
     </section>
   );

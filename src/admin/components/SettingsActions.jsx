@@ -1,8 +1,13 @@
 function SettingsActions() {
   return (
-    <div className="settings-actions">
-      <button className="settings-actions__cancel">Cancel</button>
-      <button className="settings-actions__save">Save Changes</button>
+    <div className="d-flex justify-content-end gap-2 flex-wrap mt-4">
+      <button className="btn btn-outline-secondary">
+        Cancel
+      </button>
+
+      <button className="btn btn-primary">
+        Save Changes
+      </button>
     </div>
   );
 }

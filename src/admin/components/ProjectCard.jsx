@@ -18,73 +18,91 @@ function ProjectCard({
     }
   };
 
-  return (
-    <div className="project-card">
-      <div className="project-card__top">
-        <div>
-          <h3
-            className={
-              clickable
-                ? "project-card__title project-card__title--clickable"
-                : "project-card__title"
-            }
-            onClick={handleProjectClick}
-          >
-            {title}
-          </h3>
+  const statusClass =
+    status === "Active"
+      ? "bg-success-subtle text-success"
+      : "bg-primary-subtle text-primary";
 
-          <span
-            className={
-              status === "Active"
-                ? "project-card__status"
-                : "project-card__status project-card__status--blue"
-            }
-          >
-            {status}
+  return (
+    <div className="card border-0 shadow-sm h-100">
+      <div className="card-body p-4 d-flex flex-column">
+
+        {/* Top */}
+        <div className="d-flex justify-content-between align-items-start mb-3">
+          <div>
+            <h5
+              className={`fw-semibold mb-2 ${
+                clickable ? "text-white" : ""
+              }`}
+              style={{ cursor: clickable ? "pointer" : "default" }}
+              onClick={handleProjectClick}
+            >
+              {title}
+            </h5>
+
+            <span className={`badge ${statusClass}`}>
+              {status}
+            </span>
+          </div>
+
+          <button className="btn btn-light btn-sm">⋮</button>
+        </div>
+
+        {/* Progress */}
+        <div className="mb-4">
+          <div className="d-flex justify-content-between small text-muted mb-1">
+            <span>Progress</span>
+            <span>{progress}%</span>
+          </div>
+
+          <div className="progress" style={{ height: "6px" }}>
+            <div
+              className="progress-bar"
+              role="progressbar"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+        </div>
+
+        {/* Dates */}
+        <div className="row mb-4">
+          <div className="col-6">
+            <div className="text-muted small">Start Date</div>
+            <div className="fw-medium">{startDate}</div>
+          </div>
+
+          <div className="col-6">
+            <div className="text-muted small">End Date</div>
+            <div className="fw-medium">{endDate}</div>
+          </div>
+        </div>
+
+        <hr className="my-3" />
+
+        {/* Footer */}
+        <div className="d-flex justify-content-between align-items-center mt-auto">
+
+          {/* Team */}
+          <div className="d-flex">
+            {team.map((member, index) => (
+              <div
+                key={index}
+                className="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center me-2"
+                style={{
+                  width: "32px",
+                  height: "32px",
+                  fontSize: "12px",
+                }}
+              >
+                {member}
+              </div>
+            ))}
+          </div>
+
+          <span className="text-muted small">
+            Updated {updated}
           </span>
         </div>
-
-        <button className="project-card__menu">⋮</button>
-      </div>
-
-      <div className="project-card__progress-block">
-        <div className="project-card__progress-head">
-          <span>Progress</span>
-          <span>{progress}%</span>
-        </div>
-
-        <div className="project-card__progress-bar">
-          <div
-            className="project-card__progress-fill"
-            style={{ width: `${progress}%` }}
-          ></div>
-        </div>
-      </div>
-
-      <div className="project-card__dates">
-        <div className="project-card__date-item">
-          <span className="project-card__date-label">Start Date</span>
-          <span className="project-card__date-value">{startDate}</span>
-        </div>
-
-        <div className="project-card__date-item">
-          <span className="project-card__date-label">End Date</span>
-          <span className="project-card__date-value">{endDate}</span>
-        </div>
-      </div>
-
-      <div className="project-card__divider"></div>
-
-      <div className="project-card__footer">
-        <div className="project-card__team">
-          {team.map((member, index) => (
-            <div key={index} className="project-card__member">
-              {member}
-            </div>
-          ))}
-        </div>
-
-        <span className="project-card__updated">Updated {updated}</span>
       </div>
     </div>
   );

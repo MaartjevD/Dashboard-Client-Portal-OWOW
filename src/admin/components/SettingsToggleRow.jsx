@@ -1,15 +1,22 @@
 function SettingsToggleRow({ title, subtitle, checked = false }) {
   return (
-    <div className="settings-toggle-row">
-      <div className="settings-toggle-row__text">
-        <h3 className="settings-toggle-row__title">{title}</h3>
-        <p className="settings-toggle-row__subtitle">{subtitle}</p>
+    <div className="d-flex justify-content-between align-items-center py-2">
+
+      {/* Text */}
+      <div>
+        <h6 className="mb-1 fw-semibold">{title}</h6>
+        <p className="text-muted small mb-0">{subtitle}</p>
       </div>
 
-      <label className="settings-switch">
-        <input type="checkbox" defaultChecked={checked} />
-        <span className="settings-switch__slider"></span>
-      </label>
+      {/* Switch */}
+      <div className="form-check form-switch m-0">
+        <input
+          className="form-check-input"
+          type="checkbox"
+          defaultChecked={checked}
+        />
+      </div>
+
     </div>
   );
 }

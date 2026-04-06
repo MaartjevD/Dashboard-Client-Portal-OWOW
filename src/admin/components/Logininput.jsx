@@ -1,9 +1,12 @@
 function LoginInput({ label, type, placeholder, value, onChange }) {
   return (
-    <div className="login-input">
-      <label className="login-input__label">{label}</label>
+    <div className="mb-3">
+      <label className="form-label small fw-semibold">
+        {label}
+      </label>
+
       <input
-        className="login-input__field"
+        className="form-control"
         type={type}
         placeholder={placeholder}
         value={value}
