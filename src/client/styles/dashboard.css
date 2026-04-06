@@ -819,6 +819,10 @@
   background: rgba(127, 100, 23, 0.45);
   color: #e8c14b;
 }
+.badge-completed {
+  background: rgba(0, 128, 41, 0.45);
+  color: #ffffff;
+}
 
 .project-dates {
   display: flex;
