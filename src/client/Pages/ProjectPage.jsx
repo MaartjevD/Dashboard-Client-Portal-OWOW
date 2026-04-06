@@ -6,7 +6,7 @@ import PageHeader from "../components/layout/PageHeader";
 import TabBar from "../components/layout/TabBar";
 import Footer from "../components/layout/Footer";
 import ChatButton from "../components/common/ChatButton";
-
+import Breadcrumb from "../components/common/Breadcrumb";
 import ProjectOverviewPage from "./ProjectOverviewPage";
 import ProjectBudgetPage from "./ProjectBudgetPage";
 import ProjectDocumentsPage from "./ProjectDocumentsPage";
@@ -48,7 +48,7 @@ function ProjectPage() {
 
         <div className="dashboard-content">
           <PageHeader
-            breadcrumb="Pages / Dashboard / Projects"
+            breadcrumb={<Breadcrumb />}
             title={project.name}
             subtitle={`Assigned to ${project.contactPerson}`}
             badge={project.status}

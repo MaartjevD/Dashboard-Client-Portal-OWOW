@@ -4,7 +4,7 @@ import Sidebar from "../components/layout/Sidebar";
 import TopNavbar from "../components/layout/TopNavbar";
 import PageHeader from "../components/layout/PageHeader";
 import Footer from "../components/layout/Footer";
-
+import Breadcrumb from "../components/common/Breadcrumb";
 import StatsSection from "../components/common/StatsSection";
 import ProjectList from "../components/sections/ProjectList";
 import BudgetList from "../components/sections/BudgetList";
@@ -56,7 +56,7 @@ function DashboardPage() {
 
         <div className="dashboard-content">
           <PageHeader
-            breadcrumb="Pages / Dashboard"
+            breadcrumb={<Breadcrumb />}
             title="Main Page"
             subtitle="Overview of current projects, budgets, and latest activity."
           />

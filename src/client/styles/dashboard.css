@@ -548,7 +548,46 @@
   color: #c7c7c7;
 }
 
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+.breadcrumb-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
 
+.breadcrumb-item {
+  font-size: 16px;
+  color: #8e8e8e;
+  font-weight: 400;
+}
+
+.breadcrumb-item.link {
+  color: #cfcfcf;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-item.link:hover {
+  color: #ffffff;
+}
+
+.breadcrumb-item.active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.breadcrumb-separator {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  opacity: 0.9;
+}
+.page-header-breadcrumb {
+  margin-bottom: 14px;
+}
 /* =========================================================
    SHARED COMPONENT - PAGE HEADER
 ========================================================= */
