@@ -1,3 +1,4 @@
+
 :root {
   --bg-main: #050505;
   --bg-sidebar: #0a0a0a;
@@ -17,3 +18,58 @@
 
   --font-main: "Inter", Arial, Helvetica, sans-serif;
 }
+
+/* =========================================================
+   DESIGN TOKENS / VARIABLES
+   Shared between client and admin
+========================================================= */
+
+:root {
+  /* Fonts */
+  --font-family-base: "Neue Montreal", Arial, Helvetica, sans-serif;
+
+  /* Core colors */
+  --color-bg-page: #050505;
+  --color-bg-surface: #111111;
+  --color-bg-surface-2: #171717;
+  --color-bg-surface-3: #1c1c1c;
+  --color-bg-sidebar: #0f0f10;
+  --color-bg-card: #1a1a1a;
+  --color-border: #272727;
+  --color-border-soft: #1f1f1f;
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d0d0d0;
+  --color-text-muted: #8d8d8d;
+  --color-text-faint: #777777;
+  --color-text-dark: #111111;
+
+  --color-accent: #ef7d57;
+  --color-danger: #ff5b5b;
+  --color-success: #49c16d;
+  --color-info: #6ea8ff;
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --top-navbar-height: 90px;
+  --footer-height: 86px;
+  --page-padding-x: 16px;
+  --page-padding-top: 16px;
+  --page-padding-bottom: 28px;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-chat: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  /* Z-index */
+  --z-sidebar: 100;
+  --z-chat: 999;
+}
+
+
+
